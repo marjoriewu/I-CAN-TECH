@@ -34,8 +34,8 @@ step1 = Step.create!(
   scenario: s1,
 )
 puts "step 1 created"
-step1.images.attach(io: open("http://lc-VVgeRhvm.cn-n1.lcfile.com/4c7d38ace4c46cc70fac/banner.jpg"), filename: SecureRandom.hex(20))
-step1.video.attach(io: open("http://lc-VVgeRhvm.cn-n1.lcfile.com/567a5a946d221b57e3dc/IcanTech%20-%20didi.mp4"), filename: SecureRandom.hex(20))
+# step1.images.attach(io: open("http://lc-VVgeRhvm.cn-n1.lcfile.com/4c7d38ace4c46cc70fac/banner.jpg"), filename: SecureRandom.hex(20))
+# step1.video.attach(io: open("http://lc-VVgeRhvm.cn-n1.lcfile.com/567a5a946d221b57e3dc/IcanTech%20-%20didi.mp4"), filename: SecureRandom.hex(20))
 
 puts 'seeding step 2'
 step2 = Step.create!(
