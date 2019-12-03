@@ -11,6 +11,7 @@ class ScenariosController < ApplicationController
   def show
 
     # raise
+    @record = Record.new
 
   end
 

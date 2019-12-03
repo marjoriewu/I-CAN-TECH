@@ -18,6 +18,7 @@ class StepsController < ApplicationController
     @c2 = Step.where(category: 2).first
     @c3 = Step.where(category: 3).first
     # raise
+    @record = Record.new
     case @step.category
     when 1
       @steps = Step.where(category: 1)
@@ -27,8 +28,11 @@ class StepsController < ApplicationController
       @steps = Step.where(category: 3)
     end
 
-    # redirect_to index
-    # raise
+
+
+    def update
+
+    end
 
   end
 

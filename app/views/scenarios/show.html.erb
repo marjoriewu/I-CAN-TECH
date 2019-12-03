@@ -2,4 +2,7 @@
 <!-- This page is to render the introduction page for the individual scenario -->
 <p>Title : <%= @scenario.title %></p>
 <p>Description : <%= @scenario.description %></p>
+<%=simple_form_for(@record, method: :post, url: scenario_records_path(params[:id])) do |f| %>
+  <%= f.submit "Start", class: "btn btn-primary text-light btn-block mb-3"  %>
+<% end %>
 <%= link_to "steps", scenario_steps_path(@scenario.id)%>
