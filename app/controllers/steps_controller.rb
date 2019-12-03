@@ -7,12 +7,9 @@ class StepsController < ApplicationController
     @c1 = Step.where(category: 1).first
     @c2 = Step.where(category: 2).first
     @c3 = Step.where(category: 3).first
-
   end
 
-
   def show
-
     @step.scenario = @scenario
     @c1 = Step.where(category: 1).first
     @c2 = Step.where(category: 2).first
@@ -27,13 +24,9 @@ class StepsController < ApplicationController
     when 3
       @steps = Step.where(category: 3)
     end
+  end
 
-
-
-    def update
-
-    end
-
+  def update
   end
 
   private
