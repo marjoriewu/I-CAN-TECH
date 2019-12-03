@@ -1,5 +1,5 @@
 class StepsController < ApplicationController
-  before_action :find_step, only: [:show ]
+  before_action :find_step, only: [:show]
 
   def index
     # raise

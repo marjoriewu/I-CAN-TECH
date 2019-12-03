@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Step.destroy_all
-Record.destroy_all
-Scenario.destroy_all
-User.destroy_all
+Step.all.destroy_all
+Record.all.destroy_all
+Scenario.all.destroy_all
+User.all.destroy_all
 
 u1 = User.create!(email: "test@test.com", password: "123456",
                   first_name: "fang",
@@ -32,8 +32,8 @@ step1 = Step.create!(
   scenario: s1
 )
 puts "step 1 created"
-# step1.images.attach(io: open("http://lc-VVgeRhvm.cn-n1.lcfile.com/4c7d38ace4c46cc70fac/banner.jpg"), filename: SecureRandom.hex(20))
-# step1.video.attach(io: open("http://lc-VVgeRhvm.cn-n1.lcfile.com/567a5a946d221b57e3dc/IcanTech%20-%20didi.mp4"), filename: SecureRandom.hex(20))
+step1.images.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/becca-tapert-O7sK3d3TPWQ-unsplash.jpg"), filename: SecureRandom.hex(20))
+step1.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Didi.mp4"), filename: SecureRandom.hex(20))
 
 puts 'seeding step 2'
 step2 = Step.create!(
