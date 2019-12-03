@@ -1,2 +1,4 @@
 <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% @scenarios.each do |scenario| %>
+  <%= link_to scenario.title, scenario_path(scenario.id)%>
+<% end %>
