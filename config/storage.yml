@@ -6,6 +6,13 @@ local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
 
+
+leancloud:
+  service: Leancloud
+  access_key_id: "VVgeRhvmcfpzT8z9xxkIcEQi-gzGzoHsz"
+  secret_access_key: "heXOwMx5PsFUwTz4lBgt0ELO"
+  region: ""
+  bucket: ""
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
 #   service: S3

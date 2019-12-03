@@ -3,16 +3,12 @@ class StepsController < ApplicationController
 
   def index
     # raise
-
   end
 
-
   def show
-
     @step.scenario = @scenario
     @steps = Step.all
     # raise
-
   end
 
   private
