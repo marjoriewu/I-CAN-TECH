@@ -2,6 +2,8 @@
 <!-- This is to render individual steps  # work in progress-->
 <h2>All steps</h2>
 <% @steps.each do |step| %>
-  <p><%= @step.category %> </p>
-  <p><%= @step.instruction %> </p>
+  <p>Category <%= step.category %> </p>
+  <p>Priority <%= step.priority %></p>
+  <p>instruction <%= step.instruction %> </p>
 <% end %>
+<p><%= link_to "back", scenario_steps_path%> </p>

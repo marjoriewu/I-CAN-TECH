@@ -31,7 +31,7 @@ s2 = Scenario.create!(
 step1 = Step.create!(
   category: 2,
   priority: 1,
-  instruction: 'long press this button',
+  instruction: 'Walktrough - long press this button',
   scenario: s1
 )
 
@@ -39,16 +39,38 @@ step1 = Step.create!(
 step2 = Step.create!(
   category: 2,
   priority: 2,
-  instruction: 'long press this button again',
+  instruction: 'Walkthrough - long press this button again',
   scenario: s1
 )
 
 step3 = Step.create!(
   category: 2,
   priority: 3,
-  instruction: 'tap to continue',
+  instruction: 'Walkthrough - tap to continue',
   scenario: s1
 )
+
+step4 = Step.create!(
+  category: 3,
+  priority: 1,
+  instruction: 'Practice - tap to continue again',
+  scenario: s1
+)
+
+step5 = Step.create!(
+  category: 3,
+  priority: 2,
+  instruction: 'Practice - End of practice',
+  scenario: s1
+)
+
+step6 = Step.create!(
+  category: 1,
+  priority: 1,
+  instruction: 'Demo',
+  scenario: s1
+)
+
 
 puts "Created #{User.count} User"
 puts "Created #{Scenario.count} scenarios"

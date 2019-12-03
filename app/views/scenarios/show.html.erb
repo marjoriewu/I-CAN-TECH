@@ -2,4 +2,4 @@
 <!-- This page is to render the introduction page for the individual scenario -->
 <p>Title : <%= @scenario.title %></p>
 <p>Description : <%= @scenario.description %></p>
-<%= link_to "steps", scenario_step_path(@scenario.id)%>
+<%= link_to "steps", scenario_steps_path(@scenario.id)%>
