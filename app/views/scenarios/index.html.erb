@@ -1,0 +1,5 @@
+<h1>Scenarios List</h1>
+<!-- This is the overall scenarios listing landing page -->
+<% @scenarios.each do |scenario| %>
+  <p><%= link_to scenario.title, scenario_path(scenario.id)%> </p>
+<% end %>
