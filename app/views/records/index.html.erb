@@ -1,5 +1,17 @@
 <h1>Records#index</h1>
 <p>Find me in app/views/records/index.html.erb</p>
+<p> Total records : <%= @records.count %></p>
 <% @records.each do |record| %>
-  <p><%= record.scenario.title %></p>
+  <p>Scenario : <%= record.scenario.title %></p>
+  <% if record.status == 1  %>
+    <p><%= link_to "demo", step_path(@c1)%> </p>
+  <% elsif record.status == 2 %>
+    <p><%= link_to "demo", step_path(@c1)%> </p>
+    <p><%= link_to "walkthrough", step_path(@c2)%> </p>
+  <% elsif record.status == 3 %>
+    <p><%= link_to "demo", step_path(@c1)%> </p>
+    <p><%= link_to "walkthrough", step_path(@c2)%> </p>
+    <p><%= link_to "practice", step_path(@c3)%> </p>
+  <% end %>
+  <p><%= link_to "back", scenario_steps_path(record.scenario_id)%> </p>
 <% end %>

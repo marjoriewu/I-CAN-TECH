@@ -4,13 +4,15 @@ class StepsController < ApplicationController
   def index
     # raise
     @scenario = Scenario.find(params[:scenario_id])
+
     @c1 = Step.where(category: 1).first
     @c2 = Step.where(category: 2).first
     @c3 = Step.where(category: 3).first
   end
 
   def show
-    @step.scenario = @scenario
+
+    @scenario = @step.scenario
     @c1 = Step.where(category: 1).first
     @c2 = Step.where(category: 2).first
     @c3 = Step.where(category: 3).first

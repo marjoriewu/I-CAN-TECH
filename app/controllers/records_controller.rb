@@ -3,6 +3,11 @@ class RecordsController < ApplicationController
   def index
     # @scenario = Scenario.find(params[:scenario_id])
     @records = Record.all
+    @steps = Step.all
+    @c1 = Step.where(category: 1).first
+    @c2 = Step.where(category: 2).first
+    @c3 = Step.where(category: 3).first
+
   end
 
   # def new
@@ -10,12 +15,17 @@ class RecordsController < ApplicationController
   # end
 
   def create
-    @record = Record.new
-    @record.scenario = Scenario.find(params[:scenario_id])
-    @record.user = current_user
+    if @record.nil?
+      @record = Record.new
+      @record.scenario = Scenario.find(params[:scenario_id])
+      @record.user = current_user
 
-    @record.save
-    redirect_to scenario_steps_path(@record.scenario.id)
+      @record.save
+      redirect_to scenario_steps_path(@record.scenario.id)
+
+    elsif
+      redirect_to  step_record_path(params[:id])
+    end
 
   end
 
@@ -39,6 +49,7 @@ class RecordsController < ApplicationController
       status = 3
     end
     @record.update(status: status)
+    # raise
   end
 
   private
