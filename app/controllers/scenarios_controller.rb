@@ -1,6 +1,7 @@
 class ScenariosController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
 
-  before_action :find_event, only: [ :show ]
+  before_action :find_event, only: [:show]
 
   def index
     @scenarios = Scenario.all
