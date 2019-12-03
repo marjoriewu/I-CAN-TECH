@@ -1,8 +1,12 @@
 class StepsController < ApplicationController
-  before_action :find_event, only: [ :show ]
+  before_action :find_step, only: [:show ]
 
   def index
     # raise
+    @scenario = Scenario.find(params[:scenario_id])
+    @c1 = Step.where(category: 1).first
+    @c2 = Step.where(category: 2).first
+    @c3 = Step.where(category: 3).first
 
   end
 
@@ -10,18 +14,31 @@ class StepsController < ApplicationController
   def show
 
     @step.scenario = @scenario
-    @steps = Step.all
+    @c1 = Step.where(category: 1).first
+    @c2 = Step.where(category: 2).first
+    @c3 = Step.where(category: 3).first
+    # raise
+    case @step.category
+    when 1
+      @steps = Step.where(category: 1)
+    when 2
+      @steps = Step.where(category: 2)
+    when 3
+      @steps = Step.where(category: 3)
+    end
+
+    # redirect_to index
     # raise
 
   end
 
   private
 
-  def find_event
+  def find_step
     @step = Step.find(params[:id])
   end
 
-  # def event_params
-  #   params.require(:step).permit(:title, :description)
-  # end
+  def step_params
+    params.require(:step).permit(:category)
+  end
 end
