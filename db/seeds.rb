@@ -76,7 +76,7 @@ step4.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-3.jpeg")
 
 step5 = Step.create!(
   category: 2,
-  priority: 3,
+  priority: 4,
   instruction: 'Walkthrough - tap to continue',
   scenario: s3
 )
@@ -84,7 +84,7 @@ step5.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-4.jpeg")
 
 step6 = Step.create!(
   category: 2,
-  priority: 3,
+  priority: 5,
   instruction: 'Walkthrough - tap to continue',
   scenario: s3
 )
@@ -92,7 +92,7 @@ step6.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-5.jpeg")
 
 step7 = Step.create!(
   category: 2,
-  priority: 3,
+  priority: 6,
   instruction: 'Walkthrough - tap to continue',
   scenario: s3
 )
@@ -100,7 +100,7 @@ step7.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-6.jpeg")
 
 step8 = Step.create!(
   category: 2,
-  priority: 3,
+  priority: 7,
   instruction: 'Walkthrough - tap to continue',
   scenario: s3
 )
