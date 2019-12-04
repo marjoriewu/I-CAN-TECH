@@ -121,23 +121,23 @@ step10 = Step.create!(
   scenario: s3
 )
 
-# map demo seeds
-step11 = Step.create!(
-  category: 1,
-  priority: 1,
-  instruction: 'Demo',
-  scenario: s2
-)
-step11.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map.mp4"), filename: SecureRandom.hex(20))
+# # map demo seeds
+# step11 = Step.create!(
+#   category: 1,
+#   priority: 1,
+#   instruction: 'Demo',
+#   scenario: s2
+# )
+# step11.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map.mp4"), filename: SecureRandom.hex(20))
 
-# didi demo seeds
-step12 = Step.create!(
-  category: 1,
-  priority: 1,
-  instruction: 'Demo',
-  scenario: s1
-)
-step12.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Didi.mp4"), filename: SecureRandom.hex(20))
+# # didi demo seeds
+# step12 = Step.create!(
+#   category: 1,
+#   priority: 1,
+#   instruction: 'Demo',
+#   scenario: s1
+# )
+# step12.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Didi.mp4"), filename: SecureRandom.hex(20))
 
 puts "Created #{User.count} User"
 puts "Created #{Scenario.count} scenarios"
