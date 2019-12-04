@@ -2,7 +2,7 @@ class RecordsController < ApplicationController
   # before_action :find_step, only: [:new, :create, :update]
   def index
     # @scenario = Scenario.find(params[:scenario_id])
-    @records = Record.all
+    @records = policy_scope(Record).order(updated_at: :desc)
   end
 
   # def new
@@ -11,9 +11,9 @@ class RecordsController < ApplicationController
 
   def create
     @record = Record.new
+    authorize @record
     @record.scenario = Scenario.find(params[:scenario_id])
     @record.user = current_user
-
     @record.save
     redirect_to scenario_steps_path(@record.scenario.id)
 
@@ -24,6 +24,7 @@ class RecordsController < ApplicationController
     @step = Step.find(params[:step_id])
     scenario = @step.scenario
     @record = Record.where(user_id: current_user.id, scenario_id: scenario.id).last
+    authorize @record
     @c1 = Step.where(category: 1).first
     @c2 = Step.where(category: 2).first
     @c3 = Step.where(category: 3).first
