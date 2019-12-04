@@ -1,32 +1,17 @@
 <h1>Steps#show</h1>
-<!-- This is to render individual steps  # work in progress-->
-
-
-<h2>All steps</h2>
-<% @steps.each do |step| %>
-  <p>Category <%= step.category %> </p>
-  <p>Priority <%= step.priority %></p>
-  <p>instruction <%= step.instruction %> </p>
-<% end %>
-
 <div>
   <% @steps.each do |step| %>
     <% case step.category %>
-       <% when 1 %>
-         <%= video_tag url_for(step.video), controls: true%>
-       <% when 2 %>
-
-            <%= image_tag(url_for(step.image))%>
-    <% end %>
+    <% when 1 %>
+    <%= video_tag url_for(step.video), controls: true%>
+    <% when 2 %>
+    <%= image_tag(url_for(step.image))%>
   <% end %>
+<% end %>
 </div>
-
-
 <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
   <%= f.submit "Submit", class: "btn btn-primary text-light btn-block mb-3"  %>
 <% end %>
 <p><%#= link_to "back", scenario_steps_path(@scenario.id)%> </p>
 <!-- Link to Record is a temporary place link, to be confirmed during Maggie's final design -->
 <p><%= link_to "My Record", record_path(current_user)%> </p>
-
-<p><%= url_for(Step.find(4).video) %></p>

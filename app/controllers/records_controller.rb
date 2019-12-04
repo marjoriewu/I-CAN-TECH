@@ -50,8 +50,15 @@ class RecordsController < ApplicationController
       end
       @record.update(status: status)
     end
+    current_cat = @step.category
+    next_cat = current_cat + 1
+    @next = Step.where(scenario_id: scenario.id, category: next_cat).first
     # authorize @record
-
+    if next_cat <= 3
+      redirect_to step_path(@next)
+    else
+      redirect_to record_path(current_user)
+    end
     # raise
   end
 
