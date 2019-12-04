@@ -1,18 +1,20 @@
 class RecordsController < ApplicationController
   # before_action :find_step, only: [:new, :create, :update]
+  before_action :category, only: [:index, :show, :update]
   def index
     # @scenario = Scenario.find(params[:scenario_id])
     @records = Record.all
     @steps = Step.all
-    @c1 = Step.where(category: 1).first
-    @c2 = Step.where(category: 2).first
-    @c3 = Step.where(category: 3).first
-
+    # raise
   end
 
-  # def new
-  #   @record = Record.new
-  # end
+  def show
+    # @record = Record.find(params[:id])
+    @user = current_user
+    @records = Record.all
+    @myrecords = @records.where(user_id: current_user)
+
+  end
 
   def create
     if @record.nil?
@@ -34,9 +36,7 @@ class RecordsController < ApplicationController
     @step = Step.find(params[:step_id])
     scenario = @step.scenario
     @record = Record.where(user_id: current_user.id, scenario_id: scenario.id).last
-    @c1 = Step.where(category: 1).first
-    @c2 = Step.where(category: 2).first
-    @c3 = Step.where(category: 3).first
+
 
     case @step.category
     when 1
@@ -54,8 +54,13 @@ class RecordsController < ApplicationController
 
   private
 
+  def category
+    @c1 = Step.where(category: 1).first
+    @c2 = Step.where(category: 2).first
+    @c3 = Step.where(category: 3).first
+  end
+
   # def record_params
   #   params.require(:record).permit(:status)
-
   # end
 end

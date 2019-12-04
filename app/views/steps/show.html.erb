@@ -9,4 +9,4 @@
 <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
   <%= f.submit "Submit", class: "btn btn-primary text-light btn-block mb-3"  %>
 <% end %>
-<p><%= link_to "back", scenario_steps_path(@scenario.id)%> </p>
+<p><%#= link_to "back", scenario_steps_path(@scenario.id)%> </p>
