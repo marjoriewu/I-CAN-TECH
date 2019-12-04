@@ -1,9 +1,17 @@
-<h1>Scenario</h1>
-<!-- This page is to render the introduction page for the individual scenario -->
-<p>Title : <%= @scenario.title %></p>
-<p>Description : <%= @scenario.description %></p>
-<%=simple_form_for(@record, method: :post, url: scenario_records_path(params[:id])) do |f| %>
-  <%= f.submit "Start", class: "btn btn-primary text-light btn-block mb-3"  %>
-<% end %>
-<!-- Link to Steps, is just placed here as a placeholder pending front-end integration -->
-<%= link_to "steps", scenario_steps_path(@scenario.id)%>
+<div class="container my-5">
+  <%= link_to root_path do %>
+    <%= image_tag "close-gray", width: "24px" %>
+  <% end %>
+  <!-- This page is to render the introduction page for the individual scenario -->
+  <div class="my-5">
+    <h3 class="text-primary"><%= @scenario.title %></h3>
+    <p><%= @scenario.description %></p>
+    <p>There will be three parts in this tutorial:</p>
+    <h6>1. Demo</h6>
+    <h6>2. Walk-through</h6>
+    <h6>3. Quiz</h6>
+    <%=simple_form_for(@record, method: :post, url: scenario_records_path(params[:id])) do |f| %>
+      <%= f.submit "Begin", class: "btn btn-primary text-light btn-block my-3"  %>
+    <% end %>
+  </div>
+</div>
