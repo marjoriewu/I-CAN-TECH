@@ -16,40 +16,97 @@ u1 = User.create!(email: "test@test.com", password: "123456",
                   )
 
 s1 = Scenario.create!(
-  title: 'getting around',
-  description: 'testing out'
+  title: 'Find a taxi',
+  description: 'Didi can help you to order a car to meet your friends.
+                - Input your address & destination address
+                - Choose the car type
+                - Send the order, and wait for the diver to take your order.'
 )
+s1.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/taxi@3x.png"), filename: SecureRandom.hex(20))
 
 s2 = Scenario.create!(
-  title: 'communication',
-  description: 'testing out again'
+  title: 'Hop on the bus',
+  description: 'Map can help you find your way to where you want to go.
+                - Input your destination address
+                - Choose  a transportation'
 )
+s1.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/bus@3x.png"), filename: SecureRandom.hex(20))
 
+s2 = Scenario.create!(
+  title: 'Call your friends',
+  description: 'You can talk with your family members with Wechat group call.
+                - Inside a group, open  the call
+                - Select members you want to talk with'
+)
+s1.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/call@3x.png"), filename: SecureRandom.hex(20))
+
+# groupchat demo seeds
 step1 = Step.create!(
+  category: 1,
+  priority: 1,
+  instruction: 'Demo',
+  scenario: s1
+)
+step1.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupchat.mp4"), filename: SecureRandom.hex(20))
+
+# groupchat walkthrough seeds
+step2 = Step.create!(
   category: 2,
   priority: 1,
   instruction: 'Walktrough - long press this button',
   scenario: s1
 )
-puts "step 1 created"
-step1.images.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/becca-tapert-O7sK3d3TPWQ-unsplash.jpg"), filename: SecureRandom.hex(20))
-step1.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Didi.mp4"), filename: SecureRandom.hex(20))
+step2.images.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-1.jpeg"), filename: SecureRandom.hex(20))
 
-puts 'seeding step 2'
-step2 = Step.create!(
+step3 = Step.create!(
   category: 2,
   priority: 2,
   instruction: 'Walkthrough - long press this button again',
   scenario: s1
 )
+step3.images.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-2.jpeg"), filename: SecureRandom.hex(20))
 
-step3 = Step.create!(
+step4 = Step.create!(
   category: 2,
   priority: 3,
   instruction: 'Walkthrough - tap to continue',
   scenario: s1
 )
+step4.images.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-3.jpeg"), filename: SecureRandom.hex(20))
 
+step5 = Step.create!(
+  category: 2,
+  priority: 3,
+  instruction: 'Walkthrough - tap to continue',
+  scenario: s1
+)
+step5.images.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-4.jpeg"), filename: SecureRandom.hex(20))
+
+step6 = Step.create!(
+  category: 2,
+  priority: 3,
+  instruction: 'Walkthrough - tap to continue',
+  scenario: s1
+)
+step6.images.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-5.jpeg"), filename: SecureRandom.hex(20))
+
+step7 = Step.create!(
+  category: 2,
+  priority: 3,
+  instruction: 'Walkthrough - tap to continue',
+  scenario: s1
+)
+step7.images.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-6.jpeg"), filename: SecureRandom.hex(20))
+
+step8 = Step.create!(
+  category: 2,
+  priority: 3,
+  instruction: 'Walkthrough - tap to continue',
+  scenario: s1
+)
+step8.images.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-7.jpeg"), filename: SecureRandom.hex(20))
+
+# groupchat practice seeds
 step4 = Step.create!(
   category: 3,
   priority: 1,
@@ -63,14 +120,6 @@ step5 = Step.create!(
   instruction: 'Practice - End of practice',
   scenario: s1
 )
-
-step6 = Step.create!(
-  category: 1,
-  priority: 1,
-  instruction: 'Demo',
-  scenario: s1
-)
-
 
 puts "Created #{User.count} User"
 puts "Created #{Scenario.count} scenarios"

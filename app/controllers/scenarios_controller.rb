@@ -7,12 +7,9 @@ class ScenariosController < ApplicationController
     @scenarios = Scenario.all
   end
 
-
   def show
-
     # raise
     @record = Record.new
-
   end
 
   private
