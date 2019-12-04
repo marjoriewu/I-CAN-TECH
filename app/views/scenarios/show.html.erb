@@ -5,4 +5,5 @@
 <%=simple_form_for(@record, method: :post, url: scenario_records_path(params[:id])) do |f| %>
   <%= f.submit "Start", class: "btn btn-primary text-light btn-block mb-3"  %>
 <% end %>
+<!-- Link to Steps, is just placed here as a placeholder pending front-end integration -->
 <%= link_to "steps", scenario_steps_path(@scenario.id)%>
