@@ -62,6 +62,10 @@ class RecordsController < ApplicationController
     # raise
   end
 
+  def badges
+    @myrecords = Record.all.where(user_id: current_user.id)
+  end
+
   private
 
   def category

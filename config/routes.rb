@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     resources :records, only: [:update]
   end
   resources :records, only: [:index, :show]
+
+  get '/records/:id/badges', to: 'records#badges', as: 'badges'
 end
