@@ -1,16 +1,18 @@
-<div>
-  <% @steps.each do |step| %>
-    <% case step.category %>
-    <% when 1 %>
-    <%= video_tag url_for(step.video), controls: true%>
-    <% when 2 %>
+<% @steps.each do |step| %>
+  <% case step.category %>
+  <% when 1 %>
+    <%= video_tag url_for(step.video), controls: true, class: "video-demo" %>
+    <div class="overlay invisible"></div>
+    <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
+      <%= f.submit "Next", class: "btn btn-primary text-light invisible" %>
+    <% end %>
+    <%= javascript_pack_tag 'video-demo' %>
+  <% when 2 %>
     <%= image_tag(url_for(step.image))%>
+    <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
+      <%= f.submit "Submit", class: "btn btn-primary text-light mb-3"  %>
+    <% end %>
   <% end %>
 <% end %>
-</div>
-<%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-  <%= f.submit "Submit", class: "btn btn-primary text-light btn-block mb-3"  %>
-<% end %>
-<p><%#= link_to "back", scenario_steps_path(@scenario.id)%> </p>
-<!-- Link to Record is a temporary place link, to be confirmed during Maggie's final design -->
-<p><%= link_to "My Record", record_path(current_user)%> </p>
+
+

@@ -9,6 +9,16 @@
       "js.map": [
         "/packs/js/application-faae3d400324d44b342c.js.map"
       ]
+    },
+    "video-demo": {
+      "js": [
+        "/packs/js/video-demo-69e56f5e21de5406deff.js"
+      ],
+      "js.map": [
+        "/packs/js/video-demo-69e56f5e21de5406deff.js.map"
+      ]
     }
-  }
+  },
+  "video-demo.js": "/packs/js/video-demo-69e56f5e21de5406deff.js",
+  "video-demo.js.map": "/packs/js/video-demo-69e56f5e21de5406deff.js.map"
 }
