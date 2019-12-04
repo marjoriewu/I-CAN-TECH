@@ -10,7 +10,7 @@ class RecordsController < ApplicationController
 
   def show
     # @record = Record.find(params[:id])
-    @user = current_user
+    # @user = current_user
     @records = Record.all
     @myrecords = @records.where(user_id: current_user)
   end
@@ -23,7 +23,7 @@ class RecordsController < ApplicationController
       @record.user = current_user
       @record.save
       redirect_to scenario_steps_path(@record.scenario.id)
-    elsif redirect_to step_record_path(params[:id])
+    else redirect_to step_record_path(params[:id])
     end
   end
 
