@@ -42,16 +42,20 @@ class RecordsController < ApplicationController
       # authorize @record
       case @step.category
       when 3
-        status = 3
+        if @record.status == 2
+          @record.update(status: 3)
+        end
       when 2
-        status = 2
+        if @record.status == 1
+          @record.update(status: 2)
+        end
       else
-        status = 1 unless @record.status == 2
+        if @record.status == 0
+          @record.update(status: 1)
+        end
       end
-      @record.update(status: status)
     end
-    current_cat = @step.category
-    next_cat = current_cat + 1
+    next_cat = @step.category + 1
     @next = Step.where(scenario_id: scenario.id, category: next_cat).first
     # authorize @record
     if next_cat <= 3
