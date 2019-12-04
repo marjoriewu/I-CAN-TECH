@@ -16,14 +16,29 @@ u1 = User.create!(email: "test@test.com", password: "123456",
                   )
 
 s1 = Scenario.create!(
-  title: 'getting around',
-  description: 'testing out'
+  title: 'Find a taxi',
+  description: 'Didi can help you to order a car to meet your friends.
+                - Input your address & destination address
+                - Choose the car type
+                - Send the order, and wait for the diver to take your order.'
 )
+s1.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/taxi@3x.png"), filename: SecureRandom.hex(20))
 
 s2 = Scenario.create!(
-  title: 'communication',
-  description: 'testing out again'
+  title: 'Hop on the bus',
+  description: 'Map can help you find your way to where you want to go.
+                - Input your destination address
+                - Choose  a transportation'
 )
+s1.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/bus@3x.png"), filename: SecureRandom.hex(20))
+
+s2 = Scenario.create!(
+  title: 'Call your friends',
+  description: 'You can talk with your family members with Wechat group call.
+                - Inside a group, open  the call
+                - Select members you want to talk with'
+)
+s1.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/call@3x.png"), filename: SecureRandom.hex(20))
 
 step1 = Step.create!(
   category: 2,
@@ -32,7 +47,6 @@ step1 = Step.create!(
   scenario: s1
 )
 puts "step 1 created"
-step1.images.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/becca-tapert-O7sK3d3TPWQ-unsplash.jpg"), filename: SecureRandom.hex(20))
 step1.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Didi.mp4"), filename: SecureRandom.hex(20))
 
 puts 'seeding step 2'
@@ -42,6 +56,7 @@ step2 = Step.create!(
   instruction: 'Walkthrough - long press this button again',
   scenario: s1
 )
+step2.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupchat.mp4"), filename: SecureRandom.hex(20))
 
 step3 = Step.create!(
   category: 2,

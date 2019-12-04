@@ -24,7 +24,6 @@ class RecordsController < ApplicationController
     @step = Step.find(params[:step_id])
     scenario = @step.scenario
     @record = Record.where(user_id: current_user.id, scenario_id: scenario.id).last
-    authorize @record
     @c1 = Step.where(category: 1).first
     @c2 = Step.where(category: 2).first
     @c3 = Step.where(category: 3).first
