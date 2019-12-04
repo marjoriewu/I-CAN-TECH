@@ -1,0 +1,12 @@
+.scenario-card {
+  height: 90px;
+  border: none;
+  border-radius: 10px;
+  color: $white;
+  background-size: cover;
+  background-position: center center;
+  h5 {
+    color: $primary;
+    margin: auto 30px;
+  }
+}

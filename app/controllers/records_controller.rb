@@ -12,38 +12,44 @@ class RecordsController < ApplicationController
     # @record = Record.find(params[:id])
     # @user = current_user
     @records = Record.all
-    @myrecords = @records.where(user_id: current_user)
+    @myrecords = @records.where(user_id: current_user.id)
   end
 
   def create
-    if @record.nil?
-      @record = Record.new
+    scenario_id = params[:scenario_id]
+    @record = Record.where(user_id: current_user.id, scenario_id: scenario_id)
+    if @record.empty?
+      # create
+      @new_record = Record.new
       authorize @record
-      @record.scenario = Scenario.find(params[:scenario_id])
-      @record.user = current_user
-      @record.save
-      redirect_to scenario_steps_path(@record.scenario.id)
-    else redirect_to step_record_path(params[:id])
+      @new_record.scenario = Scenario.find(params[:scenario_id])
+      @new_record.user = current_user
+      @new_record.save
+      redirect_to scenario_steps_path(@new_record.scenario_id)
+    else
+      #update
+      @step = Step.where(scenario_id: scenario_id, category: 1).first
+      redirect_to step_path(@step)
     end
+
   end
 
   def update
     @step = Step.find(params[:step_id])
     scenario = @step.scenario
     @record = Record.where(user_id: current_user.id, scenario_id: scenario.id).last
-    # authorize @record
-
-    case @step.category
-    when 1
-      status = 1
-    when 2
-      @steps = Step.where(category: 2)
-      status = 2
-    when 3
-      @steps = Step.where(category: 3)
-      status = 3
+    if @record.status != 3
+      # authorize @record
+      case @step.category
+      when 3
+        status = 3
+      when 2
+        status = 2
+      else
+        status = 1 unless @record.status == 2
+      end
+      @record.update(status: status)
     end
-    @record.update(status: status)
     # authorize @record
 
     # raise

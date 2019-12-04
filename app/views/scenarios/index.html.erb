@@ -1,5 +1,16 @@
-<h1>Scenarios List</h1>
 <!-- This is the overall scenarios listing landing page -->
-<% @scenarios.each do |scenario| %>
-  <p><%= link_to scenario.title, scenario_path(scenario.id)%> </p>
-<% end %>
+<div class="container my-3">
+  <div class="row">
+    <% @scenarios.each do |scenario| %>
+      <div class="col-sm-12 col-md-6">
+        <%= link_to scenario_path(scenario.id) do %>
+          <div class="card scenario-card mb-3" style="background-image: url(<%= url_for(scenario.image) %>)">
+            <h5><%= scenario.title %></h5>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render 'shared/navbar' %>
