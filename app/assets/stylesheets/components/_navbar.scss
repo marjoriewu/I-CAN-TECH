@@ -1,12 +1,20 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-custom {
+  background: $white;
+  height: 72px;
+  border-top: 2px solid $primary;
+  a {
+    font-size: 12px;
+    color: $primary;
+    width: 86px;
+    height: 52px;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 26px;
+  }
+  .active {
+    background-color: transparentize($primary, 0.85);
+  }
+  p {
+    margin: 0;
+  }
 }
