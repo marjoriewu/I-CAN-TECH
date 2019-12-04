@@ -1,7 +1,7 @@
 class ScenariosController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
-  before_action :find_event, only: [:show]
+  before_action :find_scenario, only: [:show]
 
   def index
     @scenarios = Scenario.all
@@ -14,12 +14,12 @@ class ScenariosController < ApplicationController
 
   private
 
-  def find_event
+  def find_scenario
     @scenario = Scenario.find(params[:id])
   end
 
-  def event_params
-    params.require(:scenario).permit(:title, :description)
-  end
+  # def scenario_params
+  #   params.require(:scenario).permit(:title, :description)
+  # end
 
 end

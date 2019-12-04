@@ -1,5 +1,3 @@
-<h1>Records#index</h1>
+<h1>Total records</h1>
 <p>Find me in app/views/records/index.html.erb</p>
-<% @records.each do |record| %>
-  <p><%= record.scenario.title %></p>
-<% end %>
+<p> Total records : <%= @records.count %></p>

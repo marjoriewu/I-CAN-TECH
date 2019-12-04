@@ -1,4 +1,7 @@
+This page is just a placeholder page for Backend TESTING PURPOSES
 <p><%= link_to "demo", scenario_step_path(@scenario.id, @c1)%> </p>
 <p><%= link_to "walkthrough", scenario_step_path(@scenario.id, @c2)%> </p>
 <p><%= link_to "practice", scenario_step_path(@scenario.id, @c3)%> </p>
-<p><%= link_to "record", records_path%> </p>
+<!-- link to home placed temporarily placed here pending front-end integration -->
+<p><%= link_to "home", scenarios_path%> </p>
+<p><%= link_to "My Record", record_path(current_user)%> </p>
