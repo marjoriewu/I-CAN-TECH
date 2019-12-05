@@ -1,14 +1,14 @@
 <% @myrecords.each do |record| %>
   <p>Scenario : <%= record.scenario.title %></p>
   <% if record.status == 1  %>
-    <p><%= link_to "demo", step_path(@c1)%> </p>
+    <p><%= link_to "demo", step_path(@category_1)%> </p>
   <% elsif record.status == 2 %>
-    <p><%= link_to "demo", step_path(@c1)%> </p>
-    <p><%= link_to "walkthrough", step_path(@c2)%> </p>
+    <p><%= link_to "demo", step_path(@category_1)%> </p>
+    <p><%= link_to "walkthrough", step_path(@category_2)%> </p>
   <% elsif record.status == 3 %>
-    <p><%= link_to "demo", step_path(@c1)%> </p>
-    <p><%= link_to "walkthrough", step_path(@c2)%> </p>
-    <p><%= link_to "practice", step_path(@c3)%> </p>
+    <p><%= link_to "demo", step_path(@category_1)%> </p>
+    <p><%= link_to "walkthrough", step_path(@category_2)%> </p>
+    <p><%= link_to "practice", step_path(@category_3)%> </p>
   <% end %>
 <% end %>
 <p><%#= link_to "back", record_path(@user)%> </p>

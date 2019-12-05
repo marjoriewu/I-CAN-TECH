@@ -22,14 +22,18 @@
       <% end %>
     </li>
     <li class="nav-item">
-      <%= link_to(record_path(current_user), class: "nav-link") do %>
+
+      <%= link_to(record_path(current_user.id), class: "nav-link") do %>
         <%= image_tag "marker-purple.svg", width: "24px" %>
+
         <p>Journey</p>
       <% end %>
     </li>
     <li class="nav-item">
-      <%= link_to(badges_path(current_user), class: "nav-link") do %>
+
+      <%= link_to(badges_path(current_user.id), class: "nav-link") do %>
         <%= image_tag "person-purple.svg", width: "24px" %>
+
         <p>Me</p>
       <% end %>
     </li>
