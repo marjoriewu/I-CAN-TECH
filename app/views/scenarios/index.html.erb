@@ -12,26 +12,30 @@
     <% end %>
   </div>
 </div>
-<!-- Navbar -->
-<ul class="nav nav-custom fixed-bottom">
-  <div class="container d-flex justify-content-between align-items-center">
-    <li class="nav-item">
-      <%= link_to(root_path, class: "nav-link active") do %>
-        <%= image_tag "search-purple.svg", width: "24px" %>
-        <p>Home</p>
-      <% end %>
-    </li>
-    <li class="nav-item">
-      <%= link_to(record_path(current_user), class: "nav-link") do %>
-        <%= image_tag "marker-purple.svg", width: "24px" %>
-        <p>Journey</p>
-      <% end %>
-    </li>
-    <li class="nav-item">
-      <%= link_to(badges_path(current_user), class: "nav-link") do %>
-        <%= image_tag "person-purple.svg", width: "24px" %>
-        <p>Me</p>
-      <% end %>
-    </li>
-  </div>
-</ul>
+<% if current_user.nil? %>
+  <p>hello</p>
+<% else %>
+  <!-- Navbar -->
+  <ul class="nav nav-custom fixed-bottom">
+    <div class="container d-flex justify-content-between align-items-center">
+      <li class="nav-item">
+        <%= link_to(root_path, class: "nav-link active") do %>
+          <%= image_tag "search-purple.svg", width: "24px" %>
+          <p>Home</p>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to(record_path(current_user.id), class: "nav-link") do %>
+          <%= image_tag "marker-purple.svg", width: "24px" %>
+          <p>Journey</p>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to(badges_path(current_user.id), class: "nav-link") do %>
+          <%= image_tag "person-purple.svg", width: "24px" %>
+          <p>Me</p>
+        <% end %>
+      </li>
+    </div>
+  </ul>
+<% end %>

@@ -31,7 +31,6 @@ class RecordsController < ApplicationController
       @step = Step.where(scenario_id: scenario_id, category: 1).first
       redirect_to step_path(@step)
     end
-
   end
 
   def update
