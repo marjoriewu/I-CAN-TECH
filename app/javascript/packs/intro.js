@@ -4,19 +4,6 @@
  *
  * Copyright (C) 2017 Afshin Mehrabani (@afshinmeh)
  */
-import introJs from 'intro.js/intro.js';
-
-
-
-window.onload = function() {
-  const stepId = document.querySelector(".wenjun").id;
-  console.log(stepId);
-  introJs(".jombotrom").setOption('doneLabel', 'Next page').start().oncomplete(function() {
-          window.location.href = `${parseInt(stepId, 10) + 1}`;
-        });
-};
-
-
 
 (function(f) {
     if (typeof exports === "object" && typeof module !== "undefined") {

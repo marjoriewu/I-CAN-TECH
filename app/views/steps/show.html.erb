@@ -10,7 +10,7 @@
 <% when 2 %>
 <%= @steps.length %>
 <%= @step.priority %>
-<%= javascript_pack_tag 'intro' %>
+<%= javascript_pack_tag 'guided-tour' %>
 <div class="jombotrom">
   <div class="intro-farm wenjun" id="<%= @step.id %>" data-step="<%= @step.priority %>" data-intro="<%= @step.instruction %>">
     <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), class: "walkthrough-image" %>
@@ -30,8 +30,3 @@
   <%= f.submit "Next", class: "btn btn-primary text-light mb-3"  %>
 <% end %>
 <% end %>
-<!-- <div class='test'>
-  <div class="span6 test" data-step="1" data-intro="Ok, wasn't that fun?">
-    <h4>Easy to Use</h4>
-  </div>
-</div> -->
