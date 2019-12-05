@@ -12,10 +12,10 @@
     },
     "guided-tour": {
       "js": [
-        "/packs/js/guided-tour-9e105de140874633d1b6.js"
+        "/packs/js/guided-tour-32add68baf21b4a01892.js"
       ],
       "js.map": [
-        "/packs/js/guided-tour-9e105de140874633d1b6.js.map"
+        "/packs/js/guided-tour-32add68baf21b4a01892.js.map"
       ]
     },
     "video-demo": {
@@ -27,8 +27,8 @@
       ]
     }
   },
-  "guided-tour.js": "/packs/js/guided-tour-9e105de140874633d1b6.js",
-  "guided-tour.js.map": "/packs/js/guided-tour-9e105de140874633d1b6.js.map",
+  "guided-tour.js": "/packs/js/guided-tour-32add68baf21b4a01892.js",
+  "guided-tour.js.map": "/packs/js/guided-tour-32add68baf21b4a01892.js.map",
   "video-demo.js": "/packs/js/video-demo-614aa74956d1a96570fe.js",
   "video-demo.js.map": "/packs/js/video-demo-614aa74956d1a96570fe.js.map"
 }
