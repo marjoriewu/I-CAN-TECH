@@ -1,30 +1,32 @@
 <% step = @steps.first %>
 <% case step.category %>
 <% when 1 %>
-  <%= video_tag url_for(step.video), controls: true, class: "video-demo" %>
-  <div class="overlay invisible"></div>
-  <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-    <%= f.submit "Next", class: "btn btn-primary text-light invisible" %>
-  <% end %>
-  <%= javascript_pack_tag 'video-demo' %>
-<% when 2 %>
-  <%= @steps.length %>
-  <%= @step.priority %>
-  <%= image_tag(url_for(@steps.find_by_priority(@step.priority).image))%>
-  <% if @steps.length == @step.priority %>
-    <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-      <%= f.submit "Next", class: "btn btn-primary text-light" %>
-    <% end %>
-  <% else %>
-    <%= link_to "Next step of the walkthrough", step_path(@step.id + 1) %>
-  <% end %>
-  <hr>
-<% when 3 %>
-  <p>Coming soon :)</p>
-  <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-    <%= f.submit "Next", class: "btn btn-primary text-light mb-3"  %>
-  <% end %>
+<%= video_tag url_for(step.video), controls: true, class: "video-demo" %>
+<div class="overlay invisible"></div>
+<%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
+  <%= f.submit "Next", class: "btn btn-primary text-light invisible" %>
 <% end %>
-
-
-
+<%= javascript_pack_tag 'video-demo' %>
+<% when 2 %>
+<%= @steps.length %>
+<%= @step.priority %>
+<%= javascript_pack_tag 'guided-tour' %>
+<div class="jombotrom">
+  <div class="walkthrough" id="<%= @step.id %>" data-step="<%= @step.priority %>" data-intro="<%= @step.instruction %>">
+    <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), class: "walkthrough-image" %>
+  </div>
+</div>
+<% if @steps.length == @step.priority %>
+  <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
+    <%= f.submit "Next", class: "btn btn-primary text-light" %>
+  <% end %>
+<% else %>
+  <%= link_to "Next step of the walkthrough", step_path(@step.id + 1) %>
+<% end %>
+<hr>
+<% when 3 %>
+<p>Coming soon :)</p>
+<%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
+  <%= f.submit "Next", class: "btn btn-primary text-light mb-3"  %>
+<% end %>
+<% end %>
