@@ -22,15 +22,29 @@
       <% end %>
     </li>
     <li class="nav-item">
-      <%= link_to(record_path(current_user), class: "nav-link") do %>
-        <%= image_tag "marker-purple.svg", width: "24px" %>
-        <p>Journey</p>
+      <% if user_signed_in? %>
+        <%= link_to(record_path(current_user), class: "nav-link") do %>
+          <%= image_tag "marker-purple.svg", width: "24px" %>
+          <p>Journey</p>
+        <% end %>
+      <% else %>
+        <%= link_to(new_user_session_path, class: "nav-link") do %>
+          <%= image_tag "marker-purple.svg", width: "24px" %>
+          <p>Journey</p>
+        <% end %>
       <% end %>
     </li>
     <li class="nav-item">
-      <%= link_to(badges_path(current_user), class: "nav-link") do %>
-        <%= image_tag "person-purple.svg", width: "24px" %>
-        <p>Me</p>
+      <% if user_signed_in? %>
+        <%= link_to(badges_path(current_user), class: "nav-link") do %>
+          <%= image_tag "person-purple.svg", width: "24px" %>
+          <p>Me</p>
+        <% end %>
+      <% else %>
+        <%= link_to(new_user_session_path, class: "nav-link") do %>
+          <%= image_tag "person-purple.svg", width: "24px" %>
+          <p>Me</p>
+        <% end %>
       <% end %>
     </li>
   </div>
