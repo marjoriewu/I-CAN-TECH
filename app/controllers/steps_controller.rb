@@ -1,22 +1,19 @@
 class StepsController < ApplicationController
   before_action :find_step, only: [:show]
 
-  def index
-    # raise
-    @scenario = Scenario.find(params[:scenario_id])
+  # def index
+  #   @scenario = Scenario.find(params[:scenario_id])
 
-    @c1 = Step.where(category: 1).first
-    @c2 = Step.where(category: 2).first
-    @c3 = Step.where(category: 3).first
-  end
+  #   @c1 = Step.where(category: 1).first
+  #   @c2 = Step.where(category: 2).first
+  #   @c3 = Step.where(category: 3).first
+  # end
 
   def show
+    # This render the indivual Scenario Step page
     @scenario = @step.scenario
-    # @c1 = Step.where(category: 1, scenario_id: @scenario.id).first
-    # @c2 = Step.where(category: 2, scenario_id: @scenario.id).first
-    # @c3 = Step.where(category: 3, scenario_id: @scenario.id).first
-    # raise
     @record = Record.new
+    # Checking for current category
     case @step.category
     when 1
       @steps = Step.where(category: 1, scenario_id: @scenario.id).order(priority: :asc)
@@ -25,10 +22,6 @@ class StepsController < ApplicationController
     when 3
       @steps = Step.where(category: 3, scenario_id: @scenario.id).order(priority: :asc)
     end
-    # raise
-  end
-
-  def update
   end
 
   private
