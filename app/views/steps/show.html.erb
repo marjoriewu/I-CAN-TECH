@@ -10,13 +10,17 @@
 <% when 2 %>
 <%= @steps.length %>
 <%= @step.priority %>
-<%= image_tag url_for(@steps.find_by_priority(@step.priority).image), class: "walkthrough-image" %>
+<%= javascript_pack_tag 'intro' %>
+<div class="jombotrom">
+  <div class="intro-farm wenjun" id="<%= @step.id %>" data-step="<%= @step.priority %>" data-intro="<%= @step.instruction %>">
+    <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), class: "walkthrough-image" %>
+  </div>
+</div>
 <% if @steps.length == @step.priority %>
   <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
     <%= f.submit "Next", class: "btn btn-primary text-light" %>
   <% end %>
 <% else %>
-  <%= javascript_pack_tag 'guided-tour' %>
   <%= link_to "Next step of the walkthrough", step_path(@step.id + 1) %>
 <% end %>
 <hr>
@@ -26,9 +30,8 @@
   <%= f.submit "Next", class: "btn btn-primary text-light mb-3"  %>
 <% end %>
 <% end %>
-<div id="my-element">
-  ha ha ha
-</div>
-<div id="my-other-element">
-  he he he
-</div>
+<!-- <div class='test'>
+  <div class="span6 test" data-step="1" data-intro="Ok, wasn't that fun?">
+    <h4>Easy to Use</h4>
+  </div>
+</div> -->
