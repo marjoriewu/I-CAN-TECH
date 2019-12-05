@@ -12,10 +12,10 @@
     },
     "guided-tour": {
       "js": [
-        "/packs/js/guided-tour-66919fb10c0805c2e671.js"
+        "/packs/js/guided-tour-1f5d9881e627829da12d.js"
       ],
       "js.map": [
-        "/packs/js/guided-tour-66919fb10c0805c2e671.js.map"
+        "/packs/js/guided-tour-1f5d9881e627829da12d.js.map"
       ]
     },
     "intro": {
@@ -35,8 +35,8 @@
       ]
     }
   },
-  "guided-tour.js": "/packs/js/guided-tour-66919fb10c0805c2e671.js",
-  "guided-tour.js.map": "/packs/js/guided-tour-66919fb10c0805c2e671.js.map",
+  "guided-tour.js": "/packs/js/guided-tour-1f5d9881e627829da12d.js",
+  "guided-tour.js.map": "/packs/js/guided-tour-1f5d9881e627829da12d.js.map",
   "intro.js": "/packs/js/intro-14b34ea311736b39ee63.js",
   "intro.js.map": "/packs/js/intro-14b34ea311736b39ee63.js.map",
   "video-demo.js": "/packs/js/video-demo-614aa74956d1a96570fe.js",
