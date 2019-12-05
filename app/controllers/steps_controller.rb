@@ -19,11 +19,11 @@ class StepsController < ApplicationController
     @record = Record.new
     case @step.category
     when 1
-      @steps = Step.where(category: 1, scenario_id: @scenario.id)
+      @steps = Step.where(category: 1, scenario_id: @scenario.id).order(priority: :asc)
     when 2
-      @steps = Step.where(category: 2, scenario_id: @scenario.id)
+      @steps = Step.where(category: 2, scenario_id: @scenario.id).order(priority: :asc)
     when 3
-      @steps = Step.where(category: 3, scenario_id: @scenario.id)
+      @steps = Step.where(category: 3, scenario_id: @scenario.id).order(priority: :asc)
     end
     # raise
   end
