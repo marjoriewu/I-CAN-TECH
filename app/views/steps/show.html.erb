@@ -27,8 +27,11 @@
     <% end %>
   </div>
 <% when 3 %>
-  <p>Coming soon :)</p>
-  <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-    <%= f.submit "Next", class: "btn btn-primary text-light mb-3"  %>
-  <% end %>
+  <div class="container d-flex flex-column justify-content-center align-items-center" style="width: 100vw; height: 100vh;">
+    <h3 class="text-primary">Quiz</h3>
+    <p>Coming soon :)</p>
+    <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
+      <%= f.submit "Finish", class: "button-green"  %>
+    <% end %>
+  </div>
 <% end %>
