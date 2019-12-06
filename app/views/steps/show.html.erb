@@ -8,25 +8,23 @@
 <% end %>
 <%= javascript_pack_tag 'video-demo' %>
 <% when 2 %>
-
-<%= @steps.length %>
-<%= @step.priority %>
 <%= javascript_pack_tag 'guided-tour' %>
-
 <!-- TODO: use interactive overlay & instruction -->
 <!-- <div class="jombotrom">
   <div class="walkthrough" id="<%= @step.id %>" data-step="<%= @step.priority %>" data-intro="<%= @step.instruction %>"> -->
     <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), class: "walkthrough-image" %>
 <!--   </div>
 </div> -->
-<% if @steps.length == @step.priority %>
-  <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-    <%= f.submit "Next", class: "btn btn-primary text-light" %>
+<div class="container d-flex justify-content-center align-items-end" style="width: 100vw; height: 100vh;">
+  <% if @steps.length == @step.priority %>
+    <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
+      <%= f.submit "Finish", class: "button-walkthrough" %>
+    <% end %>
+  <% else %>
+    <%= link_to "Next", step_path(@step.id + 1), class: "button-walkthrough" %>
   <% end %>
-<% else %>
-  <%= link_to "Next step of the walkthrough", step_path(@step.id + 1), class: "button-walkthrough" %>
-<% end %>
-<hr>
+</div>
+
 <% when 3 %>
 <p>Coming soon :)</p>
 <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>

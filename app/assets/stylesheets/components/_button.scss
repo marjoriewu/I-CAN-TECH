@@ -1,8 +1,14 @@
 .button-walkthrough {
-  background-color: $yellow;
-  border-radius: 4px;
-  height: 45px;
+  background-color: $green;
+  border-radius: 26px;
+  border: none;
+  height: 52px;
   color: $white;
   font-weight: 700;
-  padding: 10px 30px;
+  padding: 14px 30px;
+  margin-bottom: 50px;
+  &:hover {
+    text-decoration: none;
+    color: $white;
+  }
 }
