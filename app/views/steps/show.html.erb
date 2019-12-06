@@ -24,7 +24,7 @@
     <%= f.submit "Next", class: "btn btn-primary text-light" %>
   <% end %>
 <% else %>
-  <%= link_to "Next step of the walkthrough", step_path(@step.id + 1) %>
+  <%= link_to "Next step of the walkthrough", step_path(@step.id + 1), class: "button-walkthrough" %>
 <% end %>
 <hr>
 <% when 3 %>
