@@ -1,15 +1,20 @@
 class RecordsController < ApplicationController
-  before_action :category, only: [:index, :show, :update]
+  # before_action :category, only: [:index, :update]
   # Note :: There is no new and edit action as there is no user input required, all records will be created or updated in the create/ update action
 
   def index
     @records = policy_scope(Record).order(updated_at: :desc)
-    @steps = Step.all
+    # this looks for all records under the current login user
+    @myrecords = @records.where(user_id: current_user.id)
+    # the following codes looks for all steps in each category passed in to the _record.html in records#view
+    @demos = Step.where(category: 1)
+    @walkthroughs = Step.where(category: 2)
+    @practices = Step.where(category: 3)
   end
 
   def show
-    @records = Record.all
-    @myrecords = @records.where(user_id: current_user.id)
+
+    # raise
   end
 
   def create
@@ -35,8 +40,8 @@ class RecordsController < ApplicationController
   def update
     # updates status of Record#status to 1, 2 or 3 depending on which category is completed
     @step = Step.find(params[:step_id])
-    scenario = @step.scenario
-    @record = Record.where(user_id: current_user.id, scenario_id: scenario.id).last
+    @scenario = @step.scenario
+    @record = Record.where(user_id: current_user.id, scenario_id: @scenario.id).last
     #this step checks for the current category stored in record#status and updates the record#status to the next category// upon completing all categories in a scenario, record#status will remain at 3 even if uyser choose to repeat demo and walkthrough
     # authorize @record
     case @step.category
@@ -55,7 +60,7 @@ class RecordsController < ApplicationController
     end
     # upon updating the record#status, user will be directed to continue on the next category
     next_category = @step.category + 1
-    next_step = Step.where(scenario_id: scenario.id, category: next_category).first
+    next_step = Step.where(scenario_id: @scenario.id, category: next_category).first
     # authorize @record
     # if user has not completed practice (category: 3), this will render the next category show page
     if next_category <= 3
@@ -64,7 +69,7 @@ class RecordsController < ApplicationController
       # if user has completed all 3 categories, they will be directed to their user record displat
       redirect_to record_path(current_user)
     end
-    # raise
+
   end
 
   def badges
@@ -74,10 +79,10 @@ class RecordsController < ApplicationController
   private
 
   # this passes an array to Record View page (used in _record.html.erb and rendered in show page for the individual's record status)
-  def category
-    @category_1 = Step.where(category: 1).first
-    @category_2 = Step.where(category: 2).first
-    @category_3 = Step.where(category: 3).first
-  end
+  # def category
+  #   @category_1 = Step.where(category: 1).first
+  #   @category_2 = Step.where(category: 2).first
+  #   @category_3 = Step.where(category: 3).first
+  # end
 
 end
