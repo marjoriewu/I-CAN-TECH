@@ -28,10 +28,10 @@
     },
     "video-demo": {
       "js": [
-        "/packs/js/video-demo-614aa74956d1a96570fe.js"
+        "/packs/js/video-demo-f4bd6072ae6bcfef8812.js"
       ],
       "js.map": [
-        "/packs/js/video-demo-614aa74956d1a96570fe.js.map"
+        "/packs/js/video-demo-f4bd6072ae6bcfef8812.js.map"
       ]
     }
   },
@@ -39,6 +39,6 @@
   "guided-tour.js.map": "/packs/js/guided-tour-7b0f5e6a4908d69335be.js.map",
   "intro.js": "/packs/js/intro-14b34ea311736b39ee63.js",
   "intro.js.map": "/packs/js/intro-14b34ea311736b39ee63.js.map",
-  "video-demo.js": "/packs/js/video-demo-614aa74956d1a96570fe.js",
-  "video-demo.js.map": "/packs/js/video-demo-614aa74956d1a96570fe.js.map"
+  "video-demo.js": "/packs/js/video-demo-f4bd6072ae6bcfef8812.js",
+  "video-demo.js.map": "/packs/js/video-demo-f4bd6072ae6bcfef8812.js.map"
 }

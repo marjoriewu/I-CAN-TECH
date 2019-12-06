@@ -1,4 +1,4 @@
-.button-walkthrough {
+.button-green {
   background-color: $green;
   border-radius: 26px;
   border: none;
@@ -6,9 +6,9 @@
   color: $white;
   font-weight: 700;
   padding: 14px 30px;
-  margin-bottom: 50px;
   &:hover {
     text-decoration: none;
     color: $white;
   }
 }
+
