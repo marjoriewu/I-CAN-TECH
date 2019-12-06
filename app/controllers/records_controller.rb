@@ -42,13 +42,19 @@ class RecordsController < ApplicationController
     @step = Step.find(params[:step_id])
     @scenario = @step.scenario
     @record = Record.where(user_id: current_user.id, scenario_id: @scenario.id).last
+
     #this step checks for the current category stored in record#status and updates the record#status to the next category// upon completing all categories in a scenario, record#status will remain at 3 even if uyser choose to repeat demo and walkthrough
+
     # authorize @record
     case @step.category
     when 3
       if @record.status == 2
         @record.update(status: 3)
       end
+      # @badge = Badge.where(user_id: current_user.id, record_id: @record.id)
+      # if badge.empty?
+      # raise
+      # redirect_to badge_path(@badge.id) if badge.save
     when 2
       if @record.status == 1
         @record.update(status: 2)
@@ -66,8 +72,9 @@ class RecordsController < ApplicationController
     if next_category <= 3
       redirect_to step_path(next_step.id)
     else
-      # if user has completed all 3 categories, they will be directed to their user record displat
-      redirect_to record_path(current_user)
+      # if user has completed all 3 categories, they will be awarded with a new badge! and be directed to Me page to see their badges
+      @badge = Badge.create(user_id: current_user.id, record_id: @record.id, title: @record.scenario.title)
+      redirect_to badges_path
     end
 
   end

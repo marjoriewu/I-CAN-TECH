@@ -56,7 +56,7 @@ step2 = Step.create!(
   instruction: 'Wechat Walktrough - page 1',
   scenario: s3
 )
-step2.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-1.jpeg"), filename: SecureRandom.hex(20))
+step2.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-1.png"), filename: SecureRandom.hex(20))
 
 step3 = Step.create!(
   category: 2,
@@ -64,7 +64,7 @@ step3 = Step.create!(
   instruction: 'Wechat Walkthrough - page 2',
   scenario: s3
 )
-step3.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-2.jpeg"), filename: SecureRandom.hex(20))
+step3.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-2.png"), filename: SecureRandom.hex(20))
 
 step4 = Step.create!(
   category: 2,
@@ -72,7 +72,7 @@ step4 = Step.create!(
   instruction: 'Wechat Walkthrough - page 3',
   scenario: s3
 )
-step4.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-3.jpeg"), filename: SecureRandom.hex(20))
+step4.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-3.png"), filename: SecureRandom.hex(20))
 
 step5 = Step.create!(
   category: 2,
@@ -80,7 +80,7 @@ step5 = Step.create!(
   instruction: 'Wechat Walkthrough - page 4',
   scenario: s3
 )
-step5.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-4.jpeg"), filename: SecureRandom.hex(20))
+step5.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-4.png"), filename: SecureRandom.hex(20))
 
 step6 = Step.create!(
   category: 2,
@@ -88,7 +88,7 @@ step6 = Step.create!(
   instruction: 'Wechat Walkthrough - page 5',
   scenario: s3
 )
-step6.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-5.jpeg"), filename: SecureRandom.hex(20))
+step6.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-5.png"), filename: SecureRandom.hex(20))
 
 step7 = Step.create!(
   category: 2,
@@ -96,7 +96,7 @@ step7 = Step.create!(
   instruction: 'Wechat Walkthrough - page 6',
   scenario: s3
 )
-step7.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-6.jpeg"), filename: SecureRandom.hex(20))
+step7.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-6.png"), filename: SecureRandom.hex(20))
 
 step8 = Step.create!(
   category: 2,
@@ -104,7 +104,7 @@ step8 = Step.create!(
   instruction: 'Wechat Walkthrough - page 7',
   scenario: s3
 )
-step8.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-7.jpeg"), filename: SecureRandom.hex(20))
+step8.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-7.png"), filename: SecureRandom.hex(20))
 
 # groupchat practice seeds
 step9 = Step.create!(
