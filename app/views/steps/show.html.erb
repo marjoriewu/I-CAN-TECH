@@ -1,35 +1,34 @@
 <% step = @steps.first %>
+
 <% case step.category %>
 <% when 1 %>
-<%= video_tag url_for(step.video), controls: true, class: "video-demo" %>
-<div class="overlay invisible"></div>
-<%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-  <%= f.submit "Next", class: "btn btn-primary text-light invisible" %>
-<% end %>
-<%= javascript_pack_tag 'video-demo' %>
+  <%= video_tag url_for(step.video), controls: true, class: "video-demo" %>
+  <div class="overlay invisible container d-flex justify-content-center align-items-center">
+    <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
+      <%= f.submit "Begin walkthrough", class: "button-green invisible" %>
+    <% end %>
+  </div>
+  <%= javascript_pack_tag 'video-demo' %>
 <% when 2 %>
-
-<%= @steps.length %>
-<%= @step.priority %>
-<%= javascript_pack_tag 'guided-tour' %>
-
-<!-- TODO: use interactive overlay & instruction -->
-<!-- <div class="jombotrom">
-  <div class="walkthrough" id="<%= @step.id %>" data-step="<%= @step.priority %>" data-intro="<%= @step.instruction %>"> -->
-    <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), class: "walkthrough-image" %>
-<!--   </div>
-</div> -->
-<% if @steps.length == @step.priority %>
-  <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-    <%= f.submit "Next", class: "btn btn-primary text-light" %>
-  <% end %>
-<% else %>
-  <%= link_to "Next step of the walkthrough", step_path(@step.id + 1) %>
-<% end %>
-<hr>
+  <%= javascript_pack_tag 'guided-tour' %>
+  <!-- TODO: use interactive overlay & instruction -->
+  <!-- <div class="jombotrom">
+    <div class="walkthrough" id="<%= @step.id %>" data-step="<%= @step.priority %>" data-intro="<%= @step.instruction %>"> -->
+      <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), class: "walkthrough-image" %>
+  <!--   </div>
+  </div> -->
+  <div class="container d-flex justify-content-center align-items-end" style="width: 100vw; height: 100vh;">
+    <% if @steps.length == @step.priority %>
+      <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
+        <%= f.submit "Finish", class: "button-walkthrough button-green mb-5" %>
+      <% end %>
+    <% else %>
+      <%= link_to "Next", step_path(@step.id + 1), class: "button-green mb-5" %>
+    <% end %>
+  </div>
 <% when 3 %>
-<p>Coming soon :)</p>
-<%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-  <%= f.submit "Next", class: "btn btn-primary text-light mb-3"  %>
-<% end %>
+  <p>Coming soon :)</p>
+  <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
+    <%= f.submit "Next", class: "btn btn-primary text-light mb-3"  %>
+  <% end %>
 <% end %>
