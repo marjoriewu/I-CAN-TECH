@@ -1,14 +1,44 @@
 {
-  "application.js": "/packs/js/application-e1325894fdabae7e3cc4.js",
-  "application.js.map": "/packs/js/application-e1325894fdabae7e3cc4.js.map",
+  "application.js": "/packs/js/application-38aaf435ace69b9ea056.js",
+  "application.js.map": "/packs/js/application-38aaf435ace69b9ea056.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-e1325894fdabae7e3cc4.js"
+        "/packs/js/application-38aaf435ace69b9ea056.js"
       ],
       "js.map": [
-        "/packs/js/application-e1325894fdabae7e3cc4.js.map"
+        "/packs/js/application-38aaf435ace69b9ea056.js.map"
+      ]
+    },
+    "guided-tour": {
+      "js": [
+        "/packs/js/guided-tour-d3e3756717ac512214bd.js"
+      ],
+      "js.map": [
+        "/packs/js/guided-tour-d3e3756717ac512214bd.js.map"
+      ]
+    },
+    "intro": {
+      "js": [
+        "/packs/js/intro-90110853723e04c3fd00.js"
+      ],
+      "js.map": [
+        "/packs/js/intro-90110853723e04c3fd00.js.map"
+      ]
+    },
+    "video-demo": {
+      "js": [
+        "/packs/js/video-demo-6e6e1e816c443844ea64.js"
+      ],
+      "js.map": [
+        "/packs/js/video-demo-6e6e1e816c443844ea64.js.map"
       ]
     }
-  }
+  },
+  "guided-tour.js": "/packs/js/guided-tour-d3e3756717ac512214bd.js",
+  "guided-tour.js.map": "/packs/js/guided-tour-d3e3756717ac512214bd.js.map",
+  "intro.js": "/packs/js/intro-90110853723e04c3fd00.js",
+  "intro.js.map": "/packs/js/intro-90110853723e04c3fd00.js.map",
+  "video-demo.js": "/packs/js/video-demo-6e6e1e816c443844ea64.js",
+  "video-demo.js.map": "/packs/js/video-demo-6e6e1e816c443844ea64.js.map"
 }

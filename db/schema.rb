@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_102257) do
+ActiveRecord::Schema.define(version: 2019_12_06_023118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,8 +36,18 @@ ActiveRecord::Schema.define(version: 2019_12_02_102257) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "badges", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id"
+    t.bigint "record_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["record_id"], name: "index_badges_on_record_id"
+    t.index ["user_id"], name: "index_badges_on_user_id"
+  end
+
   create_table "records", force: :cascade do |t|
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "user_id"
     t.bigint "scenario_id"
     t.datetime "created_at", null: false
@@ -78,6 +88,8 @@ ActiveRecord::Schema.define(version: 2019_12_02_102257) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "badges", "records"
+  add_foreign_key "badges", "users"
   add_foreign_key "records", "scenarios"
   add_foreign_key "records", "users"
   add_foreign_key "steps", "scenarios"
