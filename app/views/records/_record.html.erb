@@ -1,13 +1,22 @@
 <% @myrecords.each do |record| %>
-  <p>Scenario : <%= record.scenario.title %></p>
-  <% if record.status == 1  %>
-    <p><%= link_to "demo", step_path(@category_1)%> </p>
-  <% elsif record.status == 2 %>
-    <p><%= link_to "demo", step_path(@category_1)%> </p>
-    <p><%= link_to "walkthrough", step_path(@category_2)%> </p>
-  <% elsif record.status == 3 %>
-    <p><%= link_to "demo", step_path(@category_1)%> </p>
-    <p><%= link_to "walkthrough", step_path(@category_2)%> </p>
-    <p><%= link_to "practice", step_path(@category_3)%> </p>
+  <p>Scenario : <%= record.scenario.id %></p>
+  <!-- status of the current record -->
+  <% status = record.status %>
+  <!-- this looks for the scenario_id for the current record -->
+  <% scenario_id = record.scenario_id %>
+  <!-- this looks for step.priority = 1 for each category in the record -->
+  <% demo = @demos.where(scenario_id: scenario_id).first %>
+  <% walkthrough = @walkthroughs.where(scenario_id: scenario_id).first %>
+  <% practice = @practices.where(scenario_id: scenario_id).first %>
+  <!-- this renders the link to each of category path depending on record.status -->
+  <% if status == 1  %>
+    <p><%= link_to "demo", step_path(demo)%> </p>
+  <% elsif status == 2 %>
+    <p><%= link_to "demo", step_path(demo)%> </p>
+    <p><%= link_to "walkthrough", step_path(walkthrough)%> </p>
+  <% elsif status == 3 %>
+    <p><%= link_to "demo", step_path(demo)%> </p>
+    <p><%= link_to "walkthrough", step_path(walkthrough)%> </p>
+    <p><%= link_to "practice", step_path(practice)%> </p>
   <% end %>
 <% end %>
