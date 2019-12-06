@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Step.all.destroy_all
+Badge.all.destroy_all
 Record.all.destroy_all
 Scenario.all.destroy_all
 User.all.destroy_all
