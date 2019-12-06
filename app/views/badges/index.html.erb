@@ -1,20 +1,22 @@
 <div class="container mt-5 text-center">
   <h3 class="text-primary">
-    <%= @badges.first.user.first_name %>
-    <%= @badges.first.user.last_name %>
+    <%= current_user.first_name %>
+    <%= current_user.last_name %>
   </h3>
   <p class="text-primary mt-5 mb-4">Your achievements</p>
 </div>
-<div class="container mb-5 px-4 d-flex justify-content-around">
-  <% @badges.each do|badge| %>
-    <div class="row">
-      <div class="text-center mx-3" style="width: 100px;">
-        <i class="fas fa-certificate text-info" style="font-size: 70px;"></i>
-        <p class="my-3"><%= badge.title %></p>
+<% if @badges.length != 0 %>
+  <div class="container mb-5 px-4 d-flex justify-content-around">
+    <% @badges.each do|badge| %>
+      <div class="row">
+        <div class="text-center mx-3" style="width: 100px;">
+          <i class="fas fa-certificate text-info" style="font-size: 70px;"></i>
+          <p class="my-3"><%= badge.title %></p>
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% end %>
 <div class="container text-center">
   <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-green" %>
 </div>
