@@ -41,6 +41,22 @@ s3 = Scenario.create!(
 )
 s3.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/call@3x.png"), filename: SecureRandom.hex(20))
 
+s4 = Scenario.create!(
+  title: 'Call your friends',
+  description: 'You can talk with your family members with Wechat group call.
+                - Inside a group, open  the call
+                - Select members you want to talk with'
+)
+s4.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/grocery@3x.png"), filename: SecureRandom.hex(20))
+
+s5 = Scenario.create!(
+  title: 'Call your friends',
+  description: 'You can talk with your family members with Wechat group call.
+                - Inside a group, open  the call
+                - Select members you want to talk with'
+)
+s5.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/cat@3x.png"), filename: SecureRandom.hex(20))
+
 # groupchat demo seeds
 step1 = Step.create!(
   category: 1,
