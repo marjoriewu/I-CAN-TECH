@@ -1,0 +1,14 @@
+.button-green {
+  background-color: $green;
+  border-radius: 26px;
+  border: none;
+  height: 52px;
+  color: $white;
+  font-weight: 700;
+  padding: 14px 30px;
+  &:hover {
+    text-decoration: none;
+    color: $white;
+  }
+}
+
