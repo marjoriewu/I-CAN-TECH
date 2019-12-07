@@ -40,7 +40,7 @@ s3.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/call@3x.png"), filena
 puts 'scenario 3 done'
 
 s4 = Scenario.create!(
-  title: 'Buy groceries',
+  title: '网上购物',
   description: 'You can talk with your family members with Wechat group call.
                 - Inside a group, open  the call
                 - Select members you want to talk with'
@@ -48,7 +48,7 @@ s4 = Scenario.create!(
 s4.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/grocery@3x.png"), filename: SecureRandom.hex(20))
 
 s5 = Scenario.create!(
-  title: 'Play with your pets',
+  title: '收养宠物',
   description: 'You can talk with your family members with Wechat group call.
                 - Inside a group, open  the call
                 - Select members you want to talk with'
