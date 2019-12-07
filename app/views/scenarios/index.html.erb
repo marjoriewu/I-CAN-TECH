@@ -4,7 +4,7 @@
     <% @scenarios.each do |scenario| %>
       <div class="col-sm-12 col-md-6">
         <%= link_to scenario_path(scenario.id) do %>
-          <div class="card scenario-card mb-3" style="background-image: url(<%= url_for(scenario.image) %>)">
+          <div class="card scenario-card mb-3" style="background-image: url(<%= scenario.image_url %>)">
             <h5><%= scenario.title %></h5>
           </div>
         <% end %>
@@ -18,19 +18,19 @@
     <li class="nav-item">
       <%= link_to(root_path, class: "nav-link active") do %>
         <%= image_tag "search-purple.svg", width: "24px" %>
-        <p>Home</p>
+        <p>首页</p>
       <% end %>
     </li>
     <li class="nav-item">
       <% if user_signed_in? %>
         <%= link_to(records_path(current_user), class: "nav-link") do %>
           <%= image_tag "marker-purple.svg", width: "24px" %>
-          <p>Journey</p>
+          <p>记录</p>
         <% end %>
       <% else %>
         <%= link_to(new_user_session_path, class: "nav-link") do %>
           <%= image_tag "marker-purple.svg", width: "24px" %>
-          <p>Journey</p>
+          <p>记录</p>
         <% end %>
       <% end %>
     </li>
@@ -38,12 +38,12 @@
       <% if user_signed_in? %>
         <%= link_to(badges_path(current_user), class: "nav-link") do %>
           <%= image_tag "person-purple.svg", width: "24px" %>
-          <p>Me</p>
+          <p>我的</p>
         <% end %>
       <% else %>
         <%= link_to(new_user_session_path, class: "nav-link") do %>
           <%= image_tag "person-purple.svg", width: "24px" %>
-          <p>Me</p>
+          <p>我的</p>
         <% end %>
       <% end %>
     </li>
