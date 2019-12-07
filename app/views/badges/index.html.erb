@@ -3,7 +3,7 @@
     <%= current_user.first_name %>
     <%= current_user.last_name %>
   </h3>
-  <p class="text-primary mt-5 mb-4">Your achievements</p>
+  <p class="text-primary mt-5 mb-4">我的成就</p>
 </div>
 <% if @badges.length != 0 %>
   <div class="container mb-5 px-4 d-flex justify-content-around">
@@ -18,7 +18,7 @@
   </div>
 <% end %>
 <div class="container text-center">
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-green" %>
+  <%= link_to "退出登录", destroy_user_session_path, method: :delete, class: "button-green" %>
 </div>
 
 
@@ -29,19 +29,19 @@
     <li class="nav-item">
       <%= link_to(root_path, class: "nav-link") do %>
         <%= image_tag "search-purple.svg", width: "24px" %>
-        <p>Home</p>
+        <p>首页</p>
       <% end %>
     </li>
     <li class="nav-item">
       <% if user_signed_in? %>
         <%= link_to(records_path(current_user), class: "nav-link") do %>
           <%= image_tag "marker-purple.svg", width: "24px" %>
-          <p>Journey</p>
+          <p>记录</p>
         <% end %>
       <% else %>
         <%= link_to(new_user_session_path, class: "nav-link") do %>
           <%= image_tag "marker-purple.svg", width: "24px" %>
-          <p>Journey</p>
+          <p>记录</p>
         <% end %>
       <% end %>
     </li>
@@ -49,12 +49,12 @@
       <% if user_signed_in? %>
         <%= link_to(badges_path(current_user), class: "nav-link active") do %>
           <%= image_tag "person-purple.svg", width: "24px" %>
-          <p>Me</p>
+          <p>我的</p>
         <% end %>
       <% else %>
         <%= link_to(new_user_session_path, class: "nav-link active") do %>
           <%= image_tag "person-purple.svg", width: "24px" %>
-          <p>Me</p>
+          <p>我的</p>
         <% end %>
       <% end %>
     </li>

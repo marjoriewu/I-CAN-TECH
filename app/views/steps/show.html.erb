@@ -5,7 +5,7 @@
   <%= video_tag url_for(step.video), controls: true, class: "video-demo" %>
   <div class="overlay invisible container d-flex justify-content-center align-items-center">
     <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-      <%= f.submit "Begin walkthrough", class: "button-green invisible" %>
+      <%= f.submit "分步引导", class: "button-green invisible" %>
     <% end %>
   </div>
   <%= javascript_pack_tag 'video-demo' %>
@@ -20,18 +20,18 @@
   <div class="container d-flex justify-content-center align-items-end" style="width: 100vw; height: 100vh;">
     <% if @steps.length == @step.priority %>
       <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-        <%= f.submit "Finish", class: "button-walkthrough button-green mb-5" %>
+        <%= f.submit "开始练习", class: "button-walkthrough button-green mb-5" %>
       <% end %>
     <% else %>
-      <%= link_to "Next", step_path(@step.id + 1), class: "button-green mb-5" %>
+      <%= link_to "下一步", step_path(@step.id + 1), class: "button-green mb-5" %>
     <% end %>
   </div>
 <% when 3 %>
   <div class="container d-flex flex-column justify-content-center align-items-center" style="width: 100vw; height: 100vh;">
-    <h3 class="text-primary">Quiz</h3>
+    <h3 class="text-primary">练习</h3>
     <p>Coming soon :)</p>
     <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-      <%= f.submit "Finish", class: "button-green"  %>
+      <%= f.submit "完成啦！", class: "button-green"  %>
     <% end %>
   </div>
 <% end %>
