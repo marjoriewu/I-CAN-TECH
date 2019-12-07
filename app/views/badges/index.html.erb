@@ -5,16 +5,18 @@
   </h3>
   <p class="text-primary mt-5 mb-4">我的成就</p>
 </div>
-<div class="container mb-5 px-4 d-flex justify-content-around">
-  <% @badges.each do|badge| %>
-    <div class="row">
-      <div class="text-center mx-3" style="width: 100px;">
-        <i class="fas fa-certificate text-info" style="font-size: 70px;"></i>
-        <p class="my-3"><%= badge.title %></p>
+<% if @badges.length != 0 %>
+  <div class="container mb-5 px-4 d-flex justify-content-around">
+    <% @badges.each do|badge| %>
+      <div class="row">
+        <div class="text-center mx-3" style="width: 100px;">
+          <i class="fas fa-certificate text-info" style="font-size: 70px;"></i>
+          <p class="my-3"><%= badge.title %></p>
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% end %>
 <div class="container text-center">
   <%= link_to "退出登录", destroy_user_session_path, method: :delete, class: "button-green" %>
 </div>
