@@ -1,6 +1,14 @@
-<div class="container my-3">
-  <%= render 'record' %>
-</div>
+<% if @myrecords.length > 0 %>
+  <div class="container my-3 text-center">
+    <%= render 'record' %>
+  </div>
+<% else %>
+  <div class="container d-flex flex-column align-items-center justify-content-center" style="height: 100vh; padding-bottom: 72px;">
+    <p class="text-primary">还没有任何记录</p>
+    <%= link_to "去学习", root_path, class: "button-green" %>
+  </div>
+<% end %>
+
 <!-- Navbar -->
 <ul class="nav nav-custom fixed-bottom">
   <div class="container d-flex justify-content-between align-items-center">
