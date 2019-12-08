@@ -1,0 +1,20 @@
+.record-card {
+  padding-top: 28%;
+  border: none;
+  border-radius: 10px;
+  color: $primary;
+  background-color: transparentize($primary, 0.75);
+  position: relative;
+  h5 {
+    position: absolute;
+    margin: 0;
+    top: calc(50% - 20px);
+    left: 30px;
+  }
+  p {
+    position: absolute;
+    margin: 0;
+    top: calc(50% + 10px);
+    left: 30px;
+  }
+}
