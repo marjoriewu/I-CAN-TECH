@@ -1,22 +1,68 @@
-<% @myrecords.each do |record| %>
-  <p>场景 : <%= record.scenario.title %></p>
-  <!-- status of the current record -->
-  <% status = record.status %>
-  <!-- this looks for the scenario_id for the current record -->
-  <% scenario_id = record.scenario_id %>
-  <!-- this looks for step.priority = 1 for each category in the record -->
-  <% demo = @demos.where(scenario_id: scenario_id).first %>
-  <% walkthrough = @walkthroughs.where(scenario_id: scenario_id).first %>
-  <% practice = @practices.where(scenario_id: scenario_id).first %>
-  <!-- this renders the link to each of category path depending on record.status -->
-  <% if status == 1  %>
-    <p><%= link_to "短片", step_path(demo)%> </p>
-  <% elsif status == 2 %>
-    <p><%= link_to "短片", step_path(demo)%> </p>
-    <p><%= link_to "分步引导", step_path(walkthrough)%> </p>
-  <% elsif status == 3 %>
-    <p><%= link_to "短片", step_path(demo)%> </p>
-    <p><%= link_to "分步引导", step_path(walkthrough)%> </p>
-    <p><%= link_to "练习", step_path(practice)%> </p>
+<% records = @myrecords.sort_by { |record| record.updated_at}.reverse %>
+<div class="row">
+  <% records.each do |record| %>
+    <!-- status of the current record -->
+    <% status = record.status %>
+    <!-- this looks for the scenario_id for the current record -->
+    <% scenario_id = record.scenario_id %>
+    <!-- this looks for step.priority = 1 for each category in the record -->
+    <% demo = @demos.where(scenario_id: scenario_id).first %>
+    <% walkthrough = @walkthroughs.where(scenario_id: scenario_id).first %>
+    <% practice = @practices.where(scenario_id: scenario_id).first %>
+    <!-- this renders the link to each of category path depending on record.status -->
+    <% if status == 1 %>
+      <div class="col-sm-12 col-md-6">
+        <%= link_to step_path(demo) do %>
+          <div class="card mb-3 record-card">
+            <h5><%= record.scenario.title %></h5>
+            <p>短片</p>
+          </div>
+        <% end %>
+      </div>
+    <% elsif status == 2 %>
+      <div class="col-sm-12 col-md-6">
+        <%= link_to step_path(demo) do %>
+          <div class="card mb-3 record-card">
+            <h5><%= record.scenario.title %></h5>
+            <p>短片</p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <%= link_to step_path(walkthrough) do %>
+          <div class="card mb-3 record-card">
+            <h5><%= record.scenario.title %></h5>
+            <p>分步引导</p>
+          </div>
+        <% end %>
+      </div>
+    <% elsif status == 3 %>
+      <div class="col-sm-12 col-md-6">
+        <%= link_to step_path(demo) do %>
+          <div class="card mb-3 record-card">
+            <h5><%= record.scenario.title %></h5>
+            <p>短片</p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <%= link_to step_path(walkthrough) do %>
+          <div class="card mb-3 record-card">
+            <h5><%= record.scenario.title %></h5>
+            <p>分步引导</p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <%= link_to step_path(practice) do %>
+          <div class="card mb-3 record-card">
+            <h5><%= record.scenario.title %></h5>
+            <p>练习</p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+
+

@@ -1,5 +1,5 @@
 <!-- This is the overall scenarios listing landing page -->
-<div class="container my-3">
+<div class="container mt-3" style="padding-bottom: 72px;">
   <div class="row">
     <% @scenarios.each do |scenario| %>
       <div class="col-sm-12 col-md-6">
@@ -12,6 +12,7 @@
     <% end %>
   </div>
 </div>
+<%= javascript_pack_tag 'colored-cards' %>
 <!-- Navbar -->
 <ul class="nav nav-custom fixed-bottom">
   <div class="container d-flex justify-content-between align-items-center">

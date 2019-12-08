@@ -1,6 +1,22 @@
-<div class="container my-3">
-  <%= render 'record' %>
-</div>
+<% has_valid_record = false %>
+<% if @myrecords.length != 0 %>
+  <% @myrecords.each do |record| %>
+    <% has_valid_record = true if record.status > 0 %>
+  <% end %>
+<% end %>
+
+<% if has_valid_record %>
+  <div class="container mt-3 text-center" style="padding-bottom: 72px;">
+    <%= render 'record' %>
+  </div>
+  <%= javascript_pack_tag 'colored-cards' %>
+<% else %>
+  <div class="container d-flex flex-column align-items-center justify-content-center" style="height: 100vh; padding-bottom: 72px;">
+    <p class="text-primary">还没有任何记录</p>
+    <%= link_to "去学习", root_path, class: "button-green" %>
+  </div>
+<% end %>
+
 <!-- Navbar -->
 <ul class="nav nav-custom fixed-bottom">
   <div class="container d-flex justify-content-between align-items-center">
