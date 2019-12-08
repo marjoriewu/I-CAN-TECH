@@ -1,5 +1,5 @@
 .record-card {
-  padding-top: 28%;
+  padding-top: 30%;
   border: none;
   border-radius: 10px;
   color: $primary;
@@ -8,13 +8,13 @@
   h5 {
     position: absolute;
     margin: 0;
-    top: calc(50% - 20px);
+    top: calc(50% - 26px);
     left: 30px;
   }
   p {
     position: absolute;
     margin: 0;
-    top: calc(50% + 10px);
+    top: calc(50% + 6px);
     left: 30px;
   }
 }
