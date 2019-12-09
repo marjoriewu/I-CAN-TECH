@@ -1,6 +1,9 @@
 <% step = @steps.first %>
 <% case step.category %>
 <% when 1 %>
+<% p "case 1" %>
+<% p "length #{@steps.length}" %>
+<% p "priority #{@step.priority}" %>
 <%= video_tag url_for(step.video), controls: true, class: "video-demo" %>
 <div class="overlay invisible container d-flex justify-content-center align-items-center">
   <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
@@ -9,6 +12,9 @@
 </div>
 <%= javascript_pack_tag 'video-demo' %>
 <% when 2 %>
+<% p "case 2" %>
+<% p "length #{@steps.length}" %>
+<% p "priority #{@step.priority}" %>
 <%= javascript_pack_tag 'guided-tour' %>
 <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), class: "walkthrough-image" %>
 <div class="container d-flex justify-content-center align-items-end" style="width: 100vw; height: 100vh;">
@@ -21,11 +27,22 @@
   <% end %>
 </div>
 <% when 3 %>
+<% p "case 3" %>
+<% p "length #{@steps.length}" %>
+<% p "priority #{@step.priority}" %>
 <div class="container d-flex flex-column justify-content-center align-items-center" style="width: 100vw; height: 100vh;">
   <h3 class="text-primary">练习</h3>
-  <p>Coming soon :)</p>
-  <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-    <%= f.submit "完成啦！", class: "button-green"  %>
+  <!-- the practice session -->
+  <h5><%= @steps.find_by_priority(@step.priority).question %></h5>
+    <%= @step.priority %>
+
+  <% if @steps.length == @step.priority %>
+    <%= link_to "下一步", edit_record_path(@my_record, step_id: @step.id), class: "button-green mb-5" %>
+  <% else %>
+    <%= link_to "下一步", step_path(@step.id + 1), class: "button-green mb-5" %>
   <% end %>
+
+  <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "width:200px; height: 400px"%>
+
 </div>
 <% end %>

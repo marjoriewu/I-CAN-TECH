@@ -13,6 +13,7 @@ class StepsController < ApplicationController
     # This render the indivual Scenario Step page
     @scenario = @step.scenario
     @record = Record.new
+    @my_record = Record.where(user_id: current_user.id, scenario_id: @scenario.id).last
     # Checking for current category
     case @step.category
     when 1
