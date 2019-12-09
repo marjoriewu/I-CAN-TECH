@@ -57,8 +57,9 @@ step1 = Step.create!(
   priority: 1,
   scenario: s3
 )
-step1.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Group%20call.mp4"), filename: SecureRandom.hex(20))
+step1.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/wechat-groupcall.mp4"), filename: SecureRandom.hex(20))
 puts 'step 1 done'
+
 # groupchat walkthrough seeds
 step2 = Step.create!(
   category: 2,
@@ -109,19 +110,24 @@ step8 = Step.create!(
 )
 step8.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-7.png"), filename: SecureRandom.hex(20))
 puts 'step 8 done'
+
 # groupchat practice seeds
 step9 = Step.create!(
   category: 3,
   priority: 1,
   scenario: s3
 )
+step9.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/groupcall-quiz%201.png"), filename: SecureRandom.hex(20))
 puts 'step 9 done'
+
 step10 = Step.create!(
   category: 3,
   priority: 2,
   scenario: s3
 )
+step9.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/groupcall-quiz%202.png"), filename: SecureRandom.hex(20))
 puts 'step 10 done'
+
 # map demo seeds
 step11 = Step.create!(
   category: 1,
@@ -130,138 +136,167 @@ step11 = Step.create!(
 )
 step11.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/gaode-map.mp4"), filename: SecureRandom.hex(20))
 puts 'step 11 done'
+
 #map walkthrough seeds
 step12 = Step.create!(
   category: 2,
   priority: 1,
   scenario: s2
 )
-step12.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-1.JPG"), filename: SecureRandom.hex(20))
+step12.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-1.png"), filename: SecureRandom.hex(20))
 puts 'step 12 done'
 step13 = Step.create!(
   category: 2,
   priority: 2,
   scenario: s2
 )
-step13.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-2.JPG"), filename: SecureRandom.hex(20))
+step13.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-2.png"), filename: SecureRandom.hex(20))
 puts 'step 13 done'
 step14 = Step.create!(
   category: 2,
   priority: 3,
   scenario: s2
 )
-step14.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-3.JPG"), filename: SecureRandom.hex(20))
+step14.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-3.png"), filename: SecureRandom.hex(20))
 puts 'step 14 done'
 step15 = Step.create!(
   category: 2,
   priority: 4,
   scenario: s2
 )
-step15.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-4.JPG"), filename: SecureRandom.hex(20))
+step15.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-4.png"), filename: SecureRandom.hex(20))
 puts 'step 15 done'
 step16 = Step.create!(
   category: 2,
   priority: 5,
   scenario: s2
 )
-step16.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-5.JPG"), filename: SecureRandom.hex(20))
+step16.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-5.png"), filename: SecureRandom.hex(20))
 puts 'step 16 done'
-
 
 step17 = Step.create!(
   category: 2,
   priority: 6,
   scenario: s2
 )
-step17.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-6.JPG"), filename: SecureRandom.hex(20))
+step17.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-6.png"), filename: SecureRandom.hex(20))
 puts 'step 17 done'
+
 # Gaode Map practice seeds
 step18 = Step.create!(
   category: 3,
   priority: 1,
   scenario: s2
 )
+step18.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/map-quiz%201.png"), filename: SecureRandom.hex(20))
 puts 'step 18 done'
+
 step19 = Step.create!(
   category: 3,
   priority: 2,
   scenario: s2
 )
+step19.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/map-quiz%202.png"), filename: SecureRandom.hex(20))
 puts 'step 19 done'
-# didi demo seeds
+
 step20 = Step.create!(
+  category: 3,
+  priority: 3,
+  scenario: s2
+)
+step20.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/map-quiz%203.png"), filename: SecureRandom.hex(20))
+puts 'step 20 done'
+
+# didi demo seeds
+step21 = Step.create!(
   category: 1,
   priority: 1,
   scenario: s1
 )
-step20.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/didi.mp4"), filename: SecureRandom.hex(20))
-puts 'step 20 done'
+step21.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/didi.mp4"), filename: SecureRandom.hex(20))
+puts 'step 21 done'
+
 # didi walkthrough seeds
-step21 = Step.create!(
+step22 = Step.create!(
   category: 2,
   priority: 1,
   scenario: s1
 )
-step21.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-7.jpeg"), filename: SecureRandom.hex(20))
-puts 'step 21 done'
-step22 = Step.create!(
+step22.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Didi-1.png"), filename: SecureRandom.hex(20))
+puts 'step 22 done'
+
+step23 = Step.create!(
   category: 2,
   priority: 2,
   scenario: s1
 )
-step22.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-7.jpeg"), filename: SecureRandom.hex(20))
-puts 'step 22 done'
-step23 = Step.create!(
+step23.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Didi-2.png"), filename: SecureRandom.hex(20))
+puts 'step 23 done'
+
+step24 = Step.create!(
   category: 2,
   priority: 3,
   scenario: s1
 )
-step23.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-7.jpeg"), filename: SecureRandom.hex(20))
-puts 'step 23 done'
+step24.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Didi-3.png"), filename: SecureRandom.hex(20))
+puts 'step 24 done'
 
-
-step24 = Step.create!(
+step25 = Step.create!(
   category: 2,
   priority: 4,
   scenario: s1
 )
-step24.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-7.jpeg"), filename: SecureRandom.hex(20))
-puts 'step 24 done'
-step25 = Step.create!(
-  category: 2,
-  priority: 5,
-  scenario: s1
-)
-step25.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-7.jpeg"), filename: SecureRandom.hex(20))
+step25.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Didi-4.png"), filename: SecureRandom.hex(20))
 puts 'step 25 done'
 
 step26 = Step.create!(
   category: 2,
+  priority: 5,
+  scenario: s1
+)
+step26.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Didi-5.png"), filename: SecureRandom.hex(20))
+puts 'step 26 done'
+
+step27 = Step.create!(
+  category: 2,
   priority: 6,
   scenario: s1
 )
-step26.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-7.jpeg"), filename: SecureRandom.hex(20))
-puts 'step 26 done'
-step27 = Step.create!(
+step27.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Didi-6.png"), filename: SecureRandom.hex(20))
+puts 'step 27 done'
+
+step28 = Step.create!(
   category: 2,
   priority: 7,
   scenario: s1
 )
-step27.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-7.jpeg"), filename: SecureRandom.hex(20))
-puts 'step 27 done'
+step28.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Didi-7.png"), filename: SecureRandom.hex(20))
+puts 'step 28 done'
+
 # Didi Ride  practice seeds
-step28 = Step.create!(
+step29 = Step.create!(
   category: 3,
   priority: 1,
   scenario: s1
 )
-puts 'step 28 done'
-step29 = Step.create!(
+step29.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/didi-quiz%201.png"), filename: SecureRandom.hex(20))
+puts 'step 29 done'
+
+step30 = Step.create!(
   category: 3,
   priority: 2,
   scenario: s1
 )
-puts 'step 29 done'
+step30.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/didi-quiz%202.png"), filename: SecureRandom.hex(20))
+puts 'step 30 done'
+
+step31 = Step.create!(
+  category: 3,
+  priority: 2,
+  scenario: s1
+)
+step31.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/didi-quiz%203.png"), filename: SecureRandom.hex(20))
+puts 'step 31 done'
 
 puts "Created #{User.count} User"
 puts "Created #{Scenario.count} scenarios"
