@@ -16,5 +16,11 @@
       color: $white;
       cursor: pointer;
     }
+    .correct-answer {
+      background-color: $green;
+    }
+    .incorrect-answer {
+      background-color: $red;
+    }
   }
 }

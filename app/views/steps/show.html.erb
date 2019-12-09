@@ -9,6 +9,7 @@
 </div>
 <%= javascript_pack_tag 'video-demo' %>
 <% when 2 %>
+<!-- TODO: why is this tag at the top?? -->
 <%= javascript_pack_tag 'guided-tour' %>
 <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), class: "walkthrough-image" %>
 <div class="container d-flex justify-content-center align-items-end" style="width: 100vw; height: 100vh;">
@@ -25,6 +26,7 @@
     <h5 class="text-primary">练习</h5>
     <!-- display the question -->
     <p><%= @steps.find_by_priority(@step.priority).question %></p>
+    <p class="d-none" id="right-answer"><%= @step.right_answer %></p>
     <!-- display the image -->
     <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "width: 100%; margin-bottom: 170px;"%>
     <div class="fixed-bottom">
@@ -56,4 +58,5 @@
       </div>
     </div>
   </div>
+  <%= javascript_pack_tag 'quiz' %>
 <% end %>
