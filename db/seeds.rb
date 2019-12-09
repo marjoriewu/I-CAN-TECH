@@ -57,7 +57,7 @@ step1 = Step.create!(
   priority: 1,
   scenario: s3
 )
-step1.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Group%20call.mp4"), filename: SecureRandom.hex(20))
+step1.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/wechat-groupcall.mp4"), filename: SecureRandom.hex(20))
 puts 'step 1 done'
 # groupchat walkthrough seeds
 step2 = Step.create!(
