@@ -23,9 +23,16 @@
 <% when 3 %>
 <div class="container d-flex flex-column justify-content-center align-items-center" style="width: 100vw; height: 100vh;">
   <h3 class="text-primary">练习</h3>
-  <p>Coming soon :)</p>
-  <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-    <%= f.submit "完成啦！", class: "button-green"  %>
+  <!-- the practice session -->
+  <% if @steps.length == @step.priority %>
+    <p>Congratulations!</p>
+    <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
+      <%= f.submit "完成啦！", class: "button-green"  %>
+    <% end %>
+  <% else %>
+    <h5><%= step.question %></h5>
+    <%= link_to "下一步", step_path(@step.id + 1), class: "button-green mb-5" %>
+    <%= image_tag url_for(@steps.find_by_priority(@step.priority).image)%>
   <% end %>
 </div>
 <% end %>

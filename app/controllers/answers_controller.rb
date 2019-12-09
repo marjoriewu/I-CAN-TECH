@@ -6,12 +6,11 @@ class AnswersController < ApplicationController
       @answer.user = current_user
       @step = Step.find(params[:step_id])
       @answer.user_answer = params[:user_answer]
-      is_right?
+      right?
       @answer.save
       redirect_to step_path(@step)
     else
-
-      redirect_to step_path(@step)
+      update
     end
   end
 
@@ -19,11 +18,12 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     @step = Step.find(params[:step_id])
     @answer.user_answer = params[:user_answer]
+    right?
     @answer.update(params[:answer])
     redirect_to step_path(@step)
   end
 
-  def is_right?
+  def right?
     @answer.is_right = (@answer.user_answer == @step.right_answer)
   end
 
