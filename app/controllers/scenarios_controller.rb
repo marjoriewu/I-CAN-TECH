@@ -4,7 +4,7 @@ class ScenariosController < ApplicationController
   before_action :find_scenario, only: [:show]
 
   def index
-    @scenarios = Scenario.all
+    @scenarios = Scenario.all.order(id: :asc)
   end
 
   def show
