@@ -54,7 +54,6 @@ class RecordsController < ApplicationController
       @record = Record.where(user_id: current_user.id, scenario_id: @scenario.id).last
     end
 
-
     #this step checks for the current category stored in record#status and updates the record#status to the next category// upon completing all categories in a scenario, record#status will remain at 3 even if uyser choose to repeat demo and walkthrough
 
     # authorize @record

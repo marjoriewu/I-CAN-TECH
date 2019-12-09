@@ -68,6 +68,7 @@ step2 = Step.create!(
 )
 step2.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-1.png"), filename: SecureRandom.hex(20))
 puts 'step 2 done'
+
 step3 = Step.create!(
   category: 2,
   priority: 2,
@@ -75,6 +76,7 @@ step3 = Step.create!(
 )
 step3.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-2.png"), filename: SecureRandom.hex(20))
 puts 'step 3 done'
+
 step4 = Step.create!(
   category: 2,
   priority: 3,
@@ -82,6 +84,7 @@ step4 = Step.create!(
 )
 step4.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-3.png"), filename: SecureRandom.hex(20))
 puts 'step 4 done'
+
 step5 = Step.create!(
   category: 2,
   priority: 4,
@@ -89,6 +92,7 @@ step5 = Step.create!(
 )
 step5.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-4.png"), filename: SecureRandom.hex(20))
 puts 'step 5 done'
+
 step6 = Step.create!(
   category: 2,
   priority: 5,
@@ -96,6 +100,7 @@ step6 = Step.create!(
 )
 step6.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-5.png"), filename: SecureRandom.hex(20))
 puts 'step 6 done'
+
 step7 = Step.create!(
   category: 2,
   priority: 6,
@@ -103,6 +108,7 @@ step7 = Step.create!(
 )
 step7.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Groupcall-6.png"), filename: SecureRandom.hex(20))
 puts 'step 7 done'
+
 step8 = Step.create!(
   category: 2,
   priority: 7,
@@ -115,6 +121,8 @@ puts 'step 8 done'
 step9 = Step.create!(
   category: 3,
   priority: 1,
+  question: "从哪里可以找到语音通话的选项？",
+  right_answer: 2,
   scenario: s3
 )
 step9.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/groupcall-quiz%201.png"), filename: SecureRandom.hex(20))
@@ -123,9 +131,11 @@ puts 'step 9 done'
 step10 = Step.create!(
   category: 3,
   priority: 2,
+  question: "语音通话开始后，如何切换到视频聊天？",
+  right_answer: 3,
   scenario: s3
 )
-step9.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/groupcall-quiz%202.png"), filename: SecureRandom.hex(20))
+step10.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/groupcall-quiz%202.png"), filename: SecureRandom.hex(20))
 puts 'step 10 done'
 
 # map demo seeds
@@ -145,6 +155,7 @@ step12 = Step.create!(
 )
 step12.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-1.png"), filename: SecureRandom.hex(20))
 puts 'step 12 done'
+
 step13 = Step.create!(
   category: 2,
   priority: 2,
@@ -152,6 +163,7 @@ step13 = Step.create!(
 )
 step13.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-2.png"), filename: SecureRandom.hex(20))
 puts 'step 13 done'
+
 step14 = Step.create!(
   category: 2,
   priority: 3,
@@ -159,6 +171,7 @@ step14 = Step.create!(
 )
 step14.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-3.png"), filename: SecureRandom.hex(20))
 puts 'step 14 done'
+
 step15 = Step.create!(
   category: 2,
   priority: 4,
@@ -166,6 +179,7 @@ step15 = Step.create!(
 )
 step15.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map-4.png"), filename: SecureRandom.hex(20))
 puts 'step 15 done'
+
 step16 = Step.create!(
   category: 2,
   priority: 5,
@@ -186,6 +200,8 @@ puts 'step 17 done'
 step18 = Step.create!(
   category: 3,
   priority: 1,
+  question: "你想去正大广场，如何查询推荐方案？",
+  right_answer: 3,
   scenario: s2
 )
 step18.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/map-quiz%201.png"), filename: SecureRandom.hex(20))
@@ -194,6 +210,8 @@ puts 'step 18 done'
 step19 = Step.create!(
   category: 3,
   priority: 2,
+  question: "点击哪里可以选择出行方式？",
+  right_answer: 1,
   scenario: s2
 )
 step19.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/map-quiz%202.png"), filename: SecureRandom.hex(20))
@@ -202,6 +220,8 @@ puts 'step 19 done'
 step20 = Step.create!(
   category: 3,
   priority: 3,
+  question: "以下哪个方案步行最少？",
+  right_answer: 2,
   scenario: s2
 )
 step20.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/map-quiz%203.png"), filename: SecureRandom.hex(20))
@@ -277,6 +297,8 @@ puts 'step 28 done'
 step29 = Step.create!(
   category: 3,
   priority: 1,
+  question: "点击哪里可修改上车地点？",
+  right_answer: 2,
   scenario: s1
 )
 step29.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/didi-quiz%201.png"), filename: SecureRandom.hex(20))
@@ -285,6 +307,8 @@ puts 'step 29 done'
 step30 = Step.create!(
   category: 3,
   priority: 2,
+  question: "点击哪里可以联系司机师傅？",
+  right_answer: 3,
   scenario: s1
 )
 step30.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/didi-quiz%202.png"), filename: SecureRandom.hex(20))
@@ -293,6 +317,8 @@ puts 'step 30 done'
 step31 = Step.create!(
   category: 3,
   priority: 3,
+  question: "假设你明天要去机场，点击哪里可预约用车？",
+  right_answer: 2,
   scenario: s1
 )
 step31.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/didi-quiz%203.png"), filename: SecureRandom.hex(20))
