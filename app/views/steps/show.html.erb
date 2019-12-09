@@ -28,7 +28,12 @@
     <!-- display the image -->
     <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "width: 100%;"%>
     <div class="fixed-bottom">
-      <div class="quiz-alert-correct">
+      <div class="quiz-alert-incorrect d-none">
+        <div class="container d-flex align-items-center" style="height: 100%;">
+          <h6>再试一次</h6>
+        </div>
+      </div>
+      <div class="quiz-alert-correct d-none">
         <div class="container d-flex justify-content-between align-items-center" style="height: 100%;">
           <h6>答对了！</h6>
           <!-- render the button according to progress -->

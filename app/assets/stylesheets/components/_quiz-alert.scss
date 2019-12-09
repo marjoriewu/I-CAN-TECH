@@ -6,3 +6,11 @@
     margin: 0;
   }
 }
+.quiz-alert-incorrect {
+  background: $red;
+  height: 72px;
+  h6 {
+    color: $white;
+    margin: 0;
+  }
+}
