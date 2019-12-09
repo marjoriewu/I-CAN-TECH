@@ -292,7 +292,7 @@ puts 'step 30 done'
 
 step31 = Step.create!(
   category: 3,
-  priority: 2,
+  priority: 3,
   scenario: s1
 )
 step31.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/didi-quiz%203.png"), filename: SecureRandom.hex(20))

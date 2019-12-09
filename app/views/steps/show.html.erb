@@ -42,7 +42,7 @@
     <%= link_to "下一步", step_path(@step.id + 1), class: "button-green mb-5" %>
   <% end %>
 
-  <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "width:200px; height: 400px"%>
+    <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "width:200px; height: 400px"%>
 
 </div>
 <% end %>
