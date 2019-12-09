@@ -316,7 +316,7 @@ puts 'step 30 done'
 
 step31 = Step.create!(
   category: 3,
-  priority: 2,
+  priority: 3,
   question: "假设你明天要去机场，点击哪里可预约用车？",
   right_answer: 2,
   scenario: s1
