@@ -41,17 +41,13 @@ puts 'scenario 3 done'
 
 s4 = Scenario.create!(
   title: '网上购物',
-  description: 'You can talk with your family members with Wechat group call.
-                - Inside a group, open  the call
-                - Select members you want to talk with'
+  description: '内容准备中......'
 )
 s4.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/grocery@3x.png"), filename: SecureRandom.hex(20))
 
 s5 = Scenario.create!(
   title: '收养宠物',
-  description: 'You can talk with your family members with Wechat group call.
-                - Inside a group, open  the call
-                - Select members you want to talk with'
+  description: '内容准备中......'
 )
 s5.image.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/cat@3x.png"), filename: SecureRandom.hex(20))
 
@@ -132,7 +128,7 @@ step11 = Step.create!(
   priority: 1,
   scenario: s2
 )
-step11.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Map.mp4"), filename: SecureRandom.hex(20))
+step11.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/gaode-map.mp4"), filename: SecureRandom.hex(20))
 puts 'step 11 done'
 #map walkthrough seeds
 step12 = Step.create!(
@@ -198,7 +194,7 @@ step20 = Step.create!(
   priority: 1,
   scenario: s1
 )
-step20.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/Didi.mp4"), filename: SecureRandom.hex(20))
+step20.video.attach(io: open("http://q1xs0nzvt.bkt.clouddn.com/didi.mp4"), filename: SecureRandom.hex(20))
 puts 'step 20 done'
 # didi walkthrough seeds
 step21 = Step.create!(
