@@ -43,14 +43,14 @@ class RecordsController < ApplicationController
 
   def update
     # updates status of Record#status to 1, 2 or 3 depending on which category is completed
+    @step = Step.find(params[:step_id])
+    @scenario = @step.scenario
     if session[:record_id]
       @record = Record.find(session[:record_id])
     else
       @record = Record.where(user_id: current_user.id, scenario_id: @scenario.id).last
     end
 
-    @step = Step.find(params[:step_id])
-    @scenario = @step.scenario
     #this step checks for the current category stored in record#status and updates the record#status to the next category// upon completing all categories in a scenario, record#status will remain at 3 even if uyser choose to repeat demo and walkthrough
 
     # authorize @record
