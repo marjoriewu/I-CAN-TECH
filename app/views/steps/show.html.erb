@@ -26,7 +26,7 @@
     <!-- display the question -->
     <p><%= @steps.find_by_priority(@step.priority).question %></p>
     <!-- display the image -->
-    <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "width: 100%;"%>
+    <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "width: 100%; margin-bottom: 170px;"%>
     <div class="fixed-bottom">
       <div class="quiz-alert-incorrect d-none">
         <div class="container d-flex align-items-center" style="height: 100%;">
