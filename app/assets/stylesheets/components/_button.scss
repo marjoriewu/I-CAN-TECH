@@ -12,4 +12,18 @@
     color: $white;
   }
 }
+.button-white {
+  background-color: $white;
+  border-radius: 26px;
+  border: none;
+  height: 52px;
+  color: $green;
+  font-weight: 700;
+  padding: 14px 30px;
+  display: inline-block;
+  &:hover {
+    text-decoration: none;
+    color: $green;
+  }
+}
 
