@@ -43,10 +43,13 @@ class RecordsController < ApplicationController
 
   def update
     # updates status of Record#status to 1, 2 or 3 depending on which category is completed
+    # reset_session
     @step = Step.find(params[:step_id])
     @scenario = @step.scenario
+    # use session to identify the last step of practice, so that it can render the record edit page(congratulations page):views/recored/edit.html.erb
     if session[:record_id]
       @record = Record.find(session[:record_id])
+      session[:record_id] = nil  # destroy session after it is used
     else
       @record = Record.where(user_id: current_user.id, scenario_id: @scenario.id).last
     end

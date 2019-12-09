@@ -36,10 +36,12 @@
   <h5><%= @steps.find_by_priority(@step.priority).question %></h5>
   <%= @step.priority %>
   <% if @steps.length == @step.priority %>
+  <!-- since the last step of practice do not have next step,so here need to render a new page. Because the "完成啦" submit button contains the update action of record, so we put this part on views/records/edit.html.erb  -->
     <%= link_to "下一步", edit_record_path(@my_record, step_id: @step.id), class: "button-green mb-5" %>
   <% else %>
     <%= link_to "下一步", step_path(@step.id + 1), class: "button-green mb-5" %>
   <% end %>
+
   <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "width:200px; height: 400px"%>
 </div>
 <% end %>
