@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_06_023118) do
+ActiveRecord::Schema.define(version: 2019_12_09_033753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,10 +66,11 @@ ActiveRecord::Schema.define(version: 2019_12_06_023118) do
   create_table "steps", force: :cascade do |t|
     t.integer "category"
     t.integer "priority"
-    t.string "instruction"
+    t.string "question"
     t.bigint "scenario_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "right_answer"
     t.index ["scenario_id"], name: "index_steps_on_scenario_id"
   end
 
