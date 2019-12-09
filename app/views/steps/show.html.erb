@@ -33,16 +33,16 @@
 <div class="container d-flex flex-column justify-content-center align-items-center" style="width: 100vw; height: 100vh;">
   <h3 class="text-primary">练习</h3>
   <!-- the practice session -->
-  <% if @steps.length < @step.priority %>
-    <p>Congratulations!</p>
-    <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
-      <%= f.submit "完成啦！", class: "button-green"  %>
-    <% end %>
-  <% else %>
-    <h5><%= @steps.find_by_priority(@step.priority).question %></h5>
+  <h5><%= @steps.find_by_priority(@step.priority).question %></h5>
     <%= @step.priority %>
+
+  <% if @steps.length == @step.priority %>
+    <%= link_to "下一步", edit_record_path(@my_record, step_id: @step.id), class: "button-green mb-5" %>
+  <% else %>
     <%= link_to "下一步", step_path(@step.id + 1), class: "button-green mb-5" %>
-    <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "width:200px; height: 400px"%>
   <% end %>
+
+  <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "width:200px; height: 400px"%>
+
 </div>
 <% end %>

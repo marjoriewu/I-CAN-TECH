@@ -1,0 +1,4 @@
+<p>Congratulations!</p>
+ <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:step_id])) do |f| %>
+  <%= f.submit "完成啦！", class: "button-green"  %>
+<% end %>
