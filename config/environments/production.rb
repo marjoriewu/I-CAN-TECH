@@ -93,4 +93,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # SVG helper
+  config.assets.precompile += %w( '.svg' )
+  config.assets.css_compressor = :sass
 end
