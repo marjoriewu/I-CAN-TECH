@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   resources :records, only: [:index, :edit]
 
   resources :badges, only: [:index, :create]
+
+  get '/trial/steps/:id', to: 'steps#trial', as: 'trial'
   # get '/records/:id/badges', to: 'records#badges', as: 'badges'
 end
