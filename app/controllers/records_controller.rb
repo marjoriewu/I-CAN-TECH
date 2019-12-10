@@ -32,6 +32,8 @@ class RecordsController < ApplicationController
       @new_record.user = current_user
       @new_record.save
       @scenario = @new_record.scenario_id
+      # @record_id = params[:record_id]
+      @badge = Badge.create(user_id: current_user.id, record_id: @new_record.id, title: @new_record.scenario.title, obtained: false)
       step = Step.where(scenario_id: scenario_id, category: 1).first
       redirect_to step_path(step.id)
     else
@@ -62,10 +64,6 @@ class RecordsController < ApplicationController
       if @record.status == 2
         @record.update(status: 3)
       end
-      # @badge = Badge.where(user_id: current_user.id, record_id: @record.id)
-      # if badge.empty?
-      # raise
-      # redirect_to badge_path(@badge.id) if badge.save
     when 2
       if @record.status == 1
         @record.update(status: 2)
@@ -84,7 +82,7 @@ class RecordsController < ApplicationController
       redirect_to step_path(next_step.id)
     else
       # if user has completed all 3 categories, they will be awarded with a new badge! and be directed to Me page to see their badges
-      @badge = Badge.create(user_id: current_user.id, record_id: @record.id, title: @record.scenario.title)
+      @badge = Badge.update(user_id: current_user.id, record_id: @record.id, title: @record.scenario.title, obtained: true)
       redirect_to badges_path
     end
 
