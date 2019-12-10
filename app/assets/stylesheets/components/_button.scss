@@ -12,6 +12,22 @@
     color: $white;
   }
 }
+
+.button-purple {
+  background-color: $purple;
+  border-radius: 26px;
+  border: none;
+  height: 52px;
+  color: $white;
+  font-weight: 700;
+  padding: 14px 30px;
+  display: inline-block;
+  &:hover {
+    text-decoration: none;
+    color: $white;
+  }
+}
+
 .button-white {
   background-color: $white;
   border-radius: 26px;
