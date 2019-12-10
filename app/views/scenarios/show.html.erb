@@ -6,11 +6,15 @@
   <div class="my-5">
     <h3 class="text-primary"><%= @scenario.title %></h3>
     <p><%= @scenario.description %></p>
-    <h6>1. 短片</h6>
-    <h6>2. 分步引导</h6>
-    <h6>3. 练习</h6>
+    <% if @scenario.description != "内容准备中......" %>
+      <h6>1. 短片</h6>
+      <h6>2. 分步引导</h6>
+      <h6>3. 练习</h6>
+    <% end %>
     <% if !current_user && @scenario.title == "学会打车"%>
       <%= link_to "开始试用", trial_path(@scenario.steps.first), class: "btn btn-primary text-light btn-block my-3" %>
+    <% elsif @scenario.description == "内容准备中......" %>
+      <%= link_to "回到首页", root_path, class: "btn btn-primary text-light btn-block my-3" %>
     <% else %>
       <%=simple_form_for(@record, method: :post, url: scenario_records_path(params[:id])) do |f| %>
         <%= f.submit "开始", class: "btn btn-primary text-light btn-block my-3"  %>
