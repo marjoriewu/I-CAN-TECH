@@ -9,7 +9,9 @@
 </div>
 <%= javascript_pack_tag 'video-demo' %>
 <% when 2 %>
-<%= image_tag url_for(@steps.find_by_priority(@step.priority).image), class: "walkthrough-image" %>
+<div class="d-flex justify-content-center" style="background-color: #595959;">
+  <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), class: "walkthrough-image" %>
+</div>
 <div class="fixed-bottom bg-success d-flex justify-content-center align-items-center" style="height: 72px;">
   <% if @steps.length == @step.priority %>
     <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
@@ -20,41 +22,41 @@
   <% end %>
 </div>
 <% when 3 %>
-  <div class="container mt-5">
-    <h5 class="text-primary">练习</h5>
-    <!-- display the question -->
-    <p><%= @steps.find_by_priority(@step.priority).question %></p>
-    <p class="d-none" id="right-answer"><%= @step.right_answer %></p>
-    <!-- display the image -->
-    <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "width: 100%; margin-bottom: 170px;"%>
-    <div class="fixed-bottom">
-      <div class="quiz-alert-incorrect d-none">
-        <div class="container d-flex align-items-center" style="height: 100%;">
-          <h6>再试一次</h6>
-        </div>
+<div class="container mt-5">
+  <h5 class="text-primary">练习</h5>
+  <!-- display the question -->
+  <p><%= @steps.find_by_priority(@step.priority).question %></p>
+  <p class="d-none" id="right-answer"><%= @step.right_answer %></p>
+  <!-- display the image -->
+  <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "width: 100%; margin-bottom: 170px;"%>
+  <div class="fixed-bottom">
+    <div class="quiz-alert-incorrect d-none">
+      <div class="container d-flex align-items-center" style="height: 100%;">
+        <h6>再试一次</h6>
       </div>
-      <div class="quiz-alert-correct d-none">
-        <div class="container d-flex justify-content-between align-items-center" style="height: 100%;">
-          <h6>答对了！</h6>
-          <!-- render the button according to progress -->
-          <% if @steps.length == @step.priority %>
-            <!-- since the last step of practice do not have next step,so here need to render a new page. Because the "完成啦" submit button contains the update action of record, so we put this part on views/records/edit.html.erb  -->
-            <%= link_to "完成啦！", edit_record_path(@my_record, step_id: @step.id), class: "button-white" %>
-          <% else %>
-            <%= link_to "下一题", step_path(@step.id + 1), class: "button-white" %>
-          <% end %>
-        </div>
+    </div>
+    <div class="quiz-alert-correct d-none">
+      <div class="container d-flex justify-content-between align-items-center" style="height: 100%;">
+        <h6>答对了！</h6>
+        <!-- render the button according to progress -->
+        <% if @steps.length == @step.priority %>
+          <!-- since the last step of practice do not have next step,so here need to render a new page. Because the "完成啦" submit button contains the update action of record, so we put this part on views/records/edit.html.erb  -->
+          <%= link_to "完成啦！", edit_record_path(@my_record, step_id: @step.id), class: "button-white" %>
+        <% else %>
+          <%= link_to "下一题", step_path(@step.id + 1), class: "button-white" %>
+        <% end %>
       </div>
-      <div class="quiz-options d-flex justify-content-center align-items-center">
-        <div class="options-container">
-          <ul class="list-inline mb-0 d-flex justify-content-between">
-            <li class="quiz-option-items list-inline-item">1</li>
-            <li class="quiz-option-items list-inline-item">2</li>
-            <li class="quiz-option-items list-inline-item">3</li>
-          </ul>
-        </div>
+    </div>
+    <div class="quiz-options d-flex justify-content-center align-items-center">
+      <div class="options-container">
+        <ul class="list-inline mb-0 d-flex justify-content-between">
+          <li class="quiz-option-items list-inline-item">1</li>
+          <li class="quiz-option-items list-inline-item">2</li>
+          <li class="quiz-option-items list-inline-item">3</li>
+        </ul>
       </div>
     </div>
   </div>
-  <%= javascript_pack_tag 'quiz' %>
+</div>
+<%= javascript_pack_tag 'quiz' %>
 <% end %>
