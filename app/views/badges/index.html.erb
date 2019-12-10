@@ -9,12 +9,21 @@
   <div class="container px-5">
       <div class="row" style="max-width: 400px; margin: 0 auto;">
     <% @badges.each do|badge| %>
-        <div class="col-6">
-          <div class="text-center">
-            <%= image_tag "badge.svg", width: "80px", class: "mb-2" %>
-            <p class="mb-5 text-danger"><%= badge.title %></p>
+        <% if badge.obtained %>
+          <div class="col-6">
+            <div class="text-center">
+              <%= image_tag "badge.svg", width: "80px", class: "mb-2" %>
+              <p class="mb-5 text-danger"><%= badge.title %></p>
+            </div>
           </div>
-        </div>
+        <% else %>
+          <div class="col-6">
+            <div class="text-center">
+              <%= image_tag "badge-gray.svg", width: "80px", class: "mb-2" %>
+              <p class="mb-5" style="color: #E1E1E1"><%= badge.title %></p>
+            </div>
+          </div>
+        <% end %>
     <% end %>
       </div>
   </div>
