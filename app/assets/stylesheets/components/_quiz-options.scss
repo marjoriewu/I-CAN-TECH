@@ -1,0 +1,26 @@
+.quiz-options {
+  background: $white;
+  height: 72px;
+  border-top: 2px solid $light-gray;
+  .options-container {
+    width: 180px;
+    .quiz-option-items {
+      width: 32px;
+      height: 32px;
+      margin: 0;
+      line-height: 32px;
+      border-radius: 16px;
+      font-weight: 700;
+      text-align: center;
+      background-color: $dark-yellow;
+      color: $white;
+      cursor: pointer;
+    }
+    .correct-answer {
+      background-color: $green;
+    }
+    .incorrect-answer {
+      background-color: $red;
+    }
+  }
+}
