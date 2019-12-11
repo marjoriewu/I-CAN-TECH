@@ -3,6 +3,7 @@
   height: 72px;
   border-top: 2px solid $light-gray;
   border-bottom: 2px solid $light-gray;
+  width: 100vw;
   .options-container {
     width: 180px;
     .quiz-option-items {
@@ -33,4 +34,11 @@
       top: 2px;
     }
   }
+}
+.quiz-options-fixed {
+  position: fixed;
+  top: 0;
+}
+.quiz-options-empty {
+  height: 72px;
 }

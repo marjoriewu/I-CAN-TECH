@@ -1,6 +1,7 @@
 .quiz-alert-correct {
   background: $green;
   height: 72px;
+  width: 100vw;
   h6 {
     color: $white;
     margin: 0;
@@ -9,8 +10,16 @@
 .quiz-alert-incorrect {
   background: $red;
   height: 72px;
+  width: 100vw;
   h6 {
     color: $white;
     margin: 0;
   }
+}
+.quiz-alert-fixed {
+  position: fixed;
+  top: 72px;
+}
+.alert-empty {
+  height: 72px;
 }

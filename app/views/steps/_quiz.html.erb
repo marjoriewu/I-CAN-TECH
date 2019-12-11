@@ -1,5 +1,5 @@
 <!-- Quiz content -->
-<div class="container my-5">
+<div class="container my-5 px-4" id="quiz-content">
   <h5 class="text-primary">练习 <%= @step.priority %></h5>
   <!-- display the question -->
   <p class="my-3"><%= @steps.find_by_priority(@step.priority).question %> （选择正确答案的数字编号）</p>
@@ -16,6 +16,7 @@
     </ul>
   </div>
 </div>
+<div class="quiz-options-empty d-none"></div>
 
 <!-- Incorrect answer alert -->
 <div class="quiz-alert-incorrect d-none">
@@ -37,6 +38,7 @@
     <% end %>
   </div>
 </div>
+<div class="alert-empty d-none"></div>
 
 <!-- Image -->
 <div class="container my-3 text-center">
