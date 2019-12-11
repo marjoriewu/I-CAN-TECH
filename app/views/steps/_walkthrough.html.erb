@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-center" style="background-color: #595959;">
+  <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), class: "walkthrough-image" %>
+</div>
+<div class="fixed-bottom bg-success d-flex justify-content-center align-items-center" style="height: 72px;">
+  <% if @steps.length == @step.priority %>
+    <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:id])) do |f| %>
+      <%= f.submit "开始练习", class: "button-white" %>
+    <% end %>
+  <% else %>
+    <%= link_to "下一步", step_path(@step.id + 1), class: "button-white" %>
+  <% end %>
+</div>
