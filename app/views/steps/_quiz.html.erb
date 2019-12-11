@@ -1,5 +1,5 @@
 <!-- Quiz content -->
-<div class="container mt-5">
+<div class="container my-5">
   <h5 class="text-primary">练习 <%= @step.priority %></h5>
   <!-- display the question -->
   <p class="my-3"><%= @steps.find_by_priority(@step.priority).question %> （选择正确答案的数字编号）</p>
@@ -39,8 +39,8 @@
 </div>
 
 <!-- Image -->
-<div class="container mt-3">
-  <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "width: 100%; margin-bottom: 30px;"%>
+<div class="container my-3 text-center">
+  <%= image_tag url_for(@steps.find_by_priority(@step.priority).image), style: "height: 100vh;"%>
 </div>
 
 <%= javascript_pack_tag 'quiz' %>
