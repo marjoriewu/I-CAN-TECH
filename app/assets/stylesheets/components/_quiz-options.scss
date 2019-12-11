@@ -2,6 +2,8 @@
   background: $white;
   height: 72px;
   border-top: 2px solid $light-gray;
+  border-bottom: 2px solid $light-gray;
+  width: 100vw;
   .options-container {
     width: 180px;
     .quiz-option-items {
@@ -10,6 +12,7 @@
       margin: 0;
       line-height: 32px;
       border-radius: 16px;
+      box-shadow: 2px 2px 0px 0px $orange;
       font-weight: 700;
       text-align: center;
       background-color: $dark-yellow;
@@ -18,9 +21,24 @@
     }
     .correct-answer {
       background-color: $green;
+      box-shadow: none;
+      position: relative;
+      left: 2px;
+      top: 2px;
     }
     .incorrect-answer {
       background-color: $red;
+      box-shadow: none;
+      position: relative;
+      left: 2px;
+      top: 2px;
     }
   }
+}
+.quiz-options-fixed {
+  position: fixed;
+  top: 0;
+}
+.quiz-options-empty {
+  height: 72px;
 }
