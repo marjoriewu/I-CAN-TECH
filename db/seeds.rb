@@ -12,8 +12,7 @@ Scenario.all.destroy_all
 User.all.destroy_all
 
 u1 = User.create!(email: "test@test.com", password: "123456",
-                  first_name: "fang",
-                  last_name: "b"
+                  user_name: "fang"
                   )
 puts 'users created'
 s1 = Scenario.create!(
