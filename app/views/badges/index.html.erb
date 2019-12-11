@@ -1,14 +1,13 @@
 <div class="container mt-5 text-center">
   <h3 class="text-primary">
-    <%= current_user.first_name %>
-    <%= current_user.last_name %>
+    <%= current_user.user_name %>
   </h3>
   <p class="text-primary mt-3 mb-5">我的成就</p>
 </div>
 <% if @badges.length != 0 %>
   <div class="container px-5">
-      <div class="row" style="max-width: 400px; margin: 0 auto;">
-    <% @badges.each do|badge| %>
+    <div class="row" style="max-width: 400px; margin: 0 auto;">
+      <% @badges.each do|badge| %>
         <% if badge.obtained %>
           <div class="col-6">
             <div class="text-center">
@@ -24,16 +23,13 @@
             </div>
           </div>
         <% end %>
-    <% end %>
-      </div>
+      <% end %>
+    </div>
   </div>
 <% end %>
 <div class="container text-center" style="padding-bottom: 72px;">
   <%= link_to "退出登录", destroy_user_session_path, method: :delete, class: "button-green mb-3" %>
 </div>
-
-
-
 <!-- Navbar -->
 <ul class="nav nav-custom fixed-bottom">
   <div class="container d-flex justify-content-between align-items-center">

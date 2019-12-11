@@ -12,12 +12,9 @@
                     autofocus: true,
                     label: "邮箱",
                     input_html: { autocomplete: "email" }%>
-        <%= f.input :last_name,
+        <%= f.input :user_name,
                     required: true,
-                    label: "姓"%>
-        <%= f.input :first_name,
-                    required: true,
-                    label: "名"%>
+                    label: "昵称"%>
         <%= f.input :password,
                     required: true,
                     label: "密码",
