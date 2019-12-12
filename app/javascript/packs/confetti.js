@@ -10,7 +10,7 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
   stopConfetti = stopConfettiInner;
   toggleConfetti = toggleConfettiInner;
   removeConfetti = removeConfettiInner;
-  var colors = ["DodgerBlue", "OliveDrab", "Gold", "Pink", "SlateBlue", "LightBlue", "Violet", "PaleGreen", "SteelBlue", "SandyBrown", "Chocolate", "Crimson"]
+  var colors = ["#66669F", "#6ED0C4", "#F27171", "#4093C1", "#FFD584", "#FFC344", "#FF8227", "#62A462", " #9579AD", "#C2E0C2"]
   var streamingConfetti = false;
   var animationTimer = null;
   var particles = [];
