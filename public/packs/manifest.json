@@ -3,8 +3,8 @@
   "application.js.map": "/packs/js/application-e1325894fdabae7e3cc4.js.map",
   "colored-cards.js": "/packs/js/colored-cards-f780f2cec15c480612a3.js",
   "colored-cards.js.map": "/packs/js/colored-cards-f780f2cec15c480612a3.js.map",
-  "confetti.js": "/packs/js/confetti-bf4b6821cc7f1fad8218.js",
-  "confetti.js.map": "/packs/js/confetti-bf4b6821cc7f1fad8218.js.map",
+  "confetti.js": "/packs/js/confetti-7408256a18a53897ebbf.js",
+  "confetti.js.map": "/packs/js/confetti-7408256a18a53897ebbf.js.map",
   "entrypoints": {
     "application": {
       "js": [
@@ -24,10 +24,10 @@
     },
     "confetti": {
       "js": [
-        "/packs/js/confetti-bf4b6821cc7f1fad8218.js"
+        "/packs/js/confetti-7408256a18a53897ebbf.js"
       ],
       "js.map": [
-        "/packs/js/confetti-bf4b6821cc7f1fad8218.js.map"
+        "/packs/js/confetti-7408256a18a53897ebbf.js.map"
       ]
     },
     "guided-tour": {
