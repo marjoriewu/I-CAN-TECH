@@ -94,11 +94,5 @@ class RecordsController < ApplicationController
 
   private
 
-  # this passes an array to Record View page (used in _record.html.erb and rendered in show page for the individual's record status)
-  # def category
-  #   @category_1 = Step.where(category: 1).first
-  #   @category_2 = Step.where(category: 2).first
-  #   @category_3 = Step.where(category: 3).first
-  # end
 
 end

@@ -17,9 +17,4 @@ class ScenariosController < ApplicationController
   def find_scenario
     @scenario = Scenario.find(params[:id])
   end
-
-  # def scenario_params
-  #   params.require(:scenario).permit(:title, :description)
-  # end
-
 end
