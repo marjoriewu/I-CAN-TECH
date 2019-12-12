@@ -1,4 +1,4 @@
-<%= link_to root_path do %>
+<%= link_to scenarios_path do %>
   <%= show_svg ("close-gray.svg")%>
 <% end %>
 <% step = @steps.first %>
@@ -53,7 +53,7 @@
     <% if @steps.length == @step.priority %>
       <!-- since the last step of practice do not have next step,so here need to render a new page. Because the "完成啦" submit button contains the update action of record, so we put this part on views/records/edit.html.erb  -->
       <h6>恭喜你！完成啦！</h6>
-      <%= link_to "回到首页", root_path, class: "button-white" %>
+      <%= link_to "回到首页", scenarios_path, class: "button-white" %>
     <% else %>
       <%= link_to "下一题", trial_path((@step.id + 1)), class: "button-white" %>
     <% end %>
