@@ -22,25 +22,25 @@ class RecordsController < ApplicationController
   end
 
   def create
-    # scenario_id = params[:scenario_id]
-    # @record = Record.where(user_id: current_user.id, scenario_id: scenario_id)
-    # if @record.empty?
-    #   # create new record if there's no current matching record for current_user and selected scenario
-    #   @new_record = Record.new
-    #   authorize @record
-    #   @new_record.scenario = Scenario.find(params[:scenario_id])
-    #   @new_record.user = current_user
-    #   @new_record.save
-    #   @scenario = @new_record.scenario_id
-    #   # @record_id = params[:record_id]
-    #   @badge = Badge.create(user_id: current_user.id, record_id: @new_record.id, title: @new_record.scenario.title, obtained: false)
-    #   step = Step.where(scenario_id: scenario_id, category: 1).first
-    #   redirect_to step_path(step.id)
-    # else
-    #redirect to update action if there is an existing record (started scenario but did not complete Demo)
-    step = Step.where(scenario_id: scenario_id, category: 1).first
-    redirect_to step_path(step.id)
-    # end
+    scenario_id = params[:scenario_id]
+    @record = Record.where(user_id: current_user.id, scenario_id: scenario_id)
+    if @record.empty?
+      # create new record if there's no current matching record for current_user and selected scenario
+      @new_record = Record.new
+      authorize @record
+      @new_record.scenario = Scenario.find(params[:scenario_id])
+      @new_record.user = current_user
+      @new_record.save
+      @scenario = @new_record.scenario_id
+      # @record_id = params[:record_id]
+      @badge = Badge.create(user_id: current_user.id, record_id: @new_record.id, title: @new_record.scenario.title, obtained: false)
+      step = Step.where(scenario_id: scenario_id, category: 1).first
+      redirect_to step_path(step.id)
+    else
+      #redirect to update action if there is an existing record (started scenario but did not complete Demo)
+      step = Step.where(scenario_id: scenario_id, category: 1).first
+      redirect_to step_path(step.id)
+    end
   end
 
   def update
