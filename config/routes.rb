@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  ActiveAdmin.routes(self)
   # get 'badges/index'
   # get 'badges/show'
   devise_for :users
