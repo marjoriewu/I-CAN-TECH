@@ -1,21 +1,23 @@
 <div class="d-flex align-items-center" style="height: 100vh">
   <div class="container text-center">
     <h3 class="text-primary">
-      恭喜!
+      恭喜你!
     </h3>
-    <p class="text-primary">
-      你得到了一枚奖章!
+    <p class="text-primary mb-4">
+      获得一枚新徽章!
     </p>
     <%= javascript_pack_tag 'confetti' %>
     <%= image_tag "badge.svg", width: "120px" %>
-    <p class="text-danger"><%= @record.scenario.title %></p>
-    <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:step_id])) do |f| %>
-      <%= f.submit "查看所有徽章", class: "button-green mb-4"%>
-      <% session[:record_id] = @record.id %>
-    <% end %>
-    <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:step_id])) do |f| %>
-      <%= f.submit "分享到微信", class: "button-purple", style: "width: 156px;"%>
-      <% session[:record_id] = @record.id %>
-    <% end %>
+    <p class="text-danger mb-4"><%= @record.scenario.title %></p>
+    <div class="container px-5">
+      <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:step_id])) do |f| %>
+        <%= f.submit "查看所有徽章", class: "button-green mb-3", style: "width: 100%"%>
+        <% session[:record_id] = @record.id %>
+      <% end %>
+      <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:step_id])) do |f| %>
+        <%= f.submit "分享到微信", class: "button-purple", style: "width: 100%"%>
+        <% session[:record_id] = @record.id %>
+      <% end %>
+    </div>
   </div>
 </div>
