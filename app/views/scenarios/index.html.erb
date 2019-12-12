@@ -5,7 +5,9 @@
       <div class="col-sm-12 col-md-6">
         <%= link_to scenario_path(scenario.id) do %>
           <div class="card scenario-card mb-3" style="background-image: url(<%= scenario.image_url %>)">
-            <h5><%= scenario.title %></h5>
+            <!-- example : callinf the language key from yml file -->
+            <h5><%= t 'scenarios.index.welcome' %></h5>
+            <h5><%#= scenario.title %></h5>
           </div>
         <% end %>
       </div>

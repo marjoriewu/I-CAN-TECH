@@ -14,6 +14,11 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
+    <!-- option for language selection -->
+    <ul>
+      <li><%= link_to '中文', root_path(locale: :ch) %></li>
+      <li><%= link_to 'English', root_path(locale: :en) %></li>
+    </ul>
     <!-- these two line are notification while user log in , can choose one -->
     <!-- <p class="notice"><%= notice %></p> -->
     <!-- <p class="alert"><%= alert %></p> -->
