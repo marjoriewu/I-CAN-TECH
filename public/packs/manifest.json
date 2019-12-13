@@ -54,14 +54,6 @@
         "/packs/js/quiz-b034d0246dc5d7e0dde8.js.map"
       ]
     },
-    "social-share": {
-      "js": [
-        "/packs/js/social-share-8d22a0e675630300f8f0.js"
-      ],
-      "js.map": [
-        "/packs/js/social-share-8d22a0e675630300f8f0.js.map"
-      ]
-    },
     "video-demo": {
       "js": [
         "/packs/js/video-demo-f4bd6072ae6bcfef8812.js"
@@ -85,8 +77,6 @@
   "intro.js.map": "/packs/js/intro-14b34ea311736b39ee63.js.map",
   "quiz.js": "/packs/js/quiz-b034d0246dc5d7e0dde8.js",
   "quiz.js.map": "/packs/js/quiz-b034d0246dc5d7e0dde8.js.map",
-  "social-share.js": "/packs/js/social-share-8d22a0e675630300f8f0.js",
-  "social-share.js.map": "/packs/js/social-share-8d22a0e675630300f8f0.js.map",
   "video-demo.js": "/packs/js/video-demo-f4bd6072ae6bcfef8812.js",
   "video-demo.js.map": "/packs/js/video-demo-f4bd6072ae6bcfef8812.js.map",
   "walkthrough.js": "/packs/js/walkthrough-0b67fb55b90d49cb6df4.js",
