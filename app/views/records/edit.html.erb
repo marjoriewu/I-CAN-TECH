@@ -15,7 +15,6 @@
         <% session[:record_id] = @record.id %>
       <% end %>
       <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:step_id])) do |f| %>
-        <%= javascript_pack_tag 'social-share' %>
         <% session[:record_id] = @record.id %>
       <% end %>
     </div>
