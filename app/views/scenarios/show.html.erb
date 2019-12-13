@@ -1,5 +1,5 @@
 <div class="container my-5">
-  <%= link_to root_path do %>
+  <%= link_to scenarios_path do %>
     <%= show_svg ("close-gray.svg")%>
   <% end %>
   <!-- This page is to render the introduction page for the individual scenario -->
@@ -23,7 +23,7 @@
     <% if !current_user && @scenario.title == "学会打车"%>
       <%= link_to "开始试用", trial_path(@scenario.steps.first), class: "btn btn-primary text-light btn-block my-3" %>
     <% elsif @scenario.description == "内容准备中......" %>
-      <%= link_to "回到首页", root_path, class: "btn btn-primary text-light btn-block my-3" %>
+      <%= link_to "回到首页", scenarios_path, class: "btn btn-primary text-light btn-block my-3" %>
     <% else %>
       <%=simple_form_for(@record, method: :post, url: scenario_records_path(params[:id])) do |f| %>
         <%= f.submit "开始", class: "button-green btn-block my-3"  %>
