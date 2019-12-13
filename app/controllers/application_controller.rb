@@ -25,4 +25,14 @@ class ApplicationController < ActionController::Base
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/ || params[:controller] == "scenarios" || params[:controller] == "steps" || params[:controller] == "records" || params[:controller] == "badges"
   end
+
+  protected
+
+  def after_sign_in_path_for(user)
+    scenarios_path
+  end
+
+  def after_sign_out_path_for(user)
+    scenarios_path
+  end
 end
