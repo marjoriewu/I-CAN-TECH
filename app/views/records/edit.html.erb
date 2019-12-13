@@ -14,7 +14,8 @@
       <% session[:record_id] = @record.id %>
     <% end %>
     <%=simple_form_for(@record, method: :patch, url: step_record_path(params[:step_id])) do |f| %>
-      <%= f.submit "分享到微信", class: "button-purple", style: "width: 156px;"%>
+      <%#= f.submit "分享到微信", class: "button-purple", style: "width: 156px;"%>
+      <div class="sharethis-inline-share-buttons " data-url="https://icantech.wogengapp.cn/" ></div>
       <% session[:record_id] = @record.id %>
     <% end %>
   </div>
