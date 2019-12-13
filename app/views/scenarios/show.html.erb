@@ -3,7 +3,7 @@
     <%= show_svg ("close-gray.svg")%>
   <% end %>
   <!-- This page is to render the introduction page for the individual scenario -->
-  <div class="py-5">
+  <div class="py-2">
     <h3 class="text-primary"><%= @scenario.title %></h3>
     <div class="my-4">
       <p><%= @scenario.description %></p>
@@ -23,12 +23,12 @@
       <% end %>
     </div>
     <% if !current_user && @scenario.title == "学会打车"%>
-      <%= link_to "开始试用", trial_path(@scenario.steps.first), class: "btn btn-primary text-light btn-block my-3" %>
+      <%= link_to "开始试用", trial_path(@scenario.steps.first), class: "btn btn-primary text-light btn-block mb-3" %>
     <% elsif @scenario.description == "内容准备中......" %>
-      <%= link_to "回到首页", scenarios_path, class: "btn btn-primary text-light btn-block my-3" %>
+      <%= link_to "回到首页", scenarios_path, class: "btn btn-primary text-light btn-block mb-3" %>
     <% else %>
       <%=simple_form_for(@record, method: :post, url: scenario_records_path(params[:id])) do |f| %>
-        <%= f.submit "开始", class: "button-green btn-block my-3"  %>
+        <%= f.submit "开始", class: "button-green btn-block mb-3"  %>
       <% end %>
     <% end %>
   </div>
