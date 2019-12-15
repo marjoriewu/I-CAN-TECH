@@ -18,6 +18,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pundit'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '~> 2.0', git: 'https://github.com/sferik/rails_admin.git'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
