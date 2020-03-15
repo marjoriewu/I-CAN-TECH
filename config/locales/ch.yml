@@ -1,0 +1,4 @@
+ch:
+  scenarios:
+    index:
+      welcome: "你好!"
